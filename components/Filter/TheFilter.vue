@@ -1,0 +1,121 @@
+<template>
+  <div class="services-header white-container general-content-header">
+    <div class="general-content-header-top">
+      <h2 class="general-content-header-title">{{ title }}</h2>
+      <div
+        v-if="actions && actions.length > 0"
+        class="general-content-greytexts"
+      >
+        <div
+          v-for="action in actions"
+          :key="action.id"
+          class="general-content-greytext little-grey-text"
+          :style="{ color: action.color || '#bbbbbc' }"
+          @click="$emit('action', action.method)"
+        >
+          {{ action.text }}
+        </div>
+      </div>
+    </div>
+    <div v-if="showMiddle" class="general-content-header-middle">
+      <div>
+        <div v-if="activeBefore" class="little-grey-text">
+          Активен до {{ activeBefore }}
+        </div>
+        <div
+          v-if="switchItems && switchItems.length > 0"
+          class="general-content-header-greyswitch-cont"
+        >
+          <div
+            v-for="item in switchItems"
+            :key="item.id"
+            :class="[
+              {
+                'general-content-header-greyswitch-checked':
+                  switchValue == item.value,
+                'general-content-header-greyswitch-afterchecked':
+                  switchValue != item.value,
+              },
+            ]"
+            @click="$emit('switch', item.value)"
+          >
+            <p>{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+      <div v-if="subscribers" class="subscriptions-num-cont">
+        <div class="bold-text">На вас подписанно: {{ subscribers }}</div>
+      </div>
+    </div>
+    <div v-if="showBottom" class="general-content-header-bottom mt32">
+      <div class="df">
+        <div
+          v-for="filter in filters"
+          :key="filter.id"
+          class="general-content-header-accordion-item"
+        >
+          <div>{{ filter }}</div>
+          <div class="general-content-header-arrowdown">
+            <img src="/chevron-downvs.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="general-content-header-search">
+        <img class="icon24" src="/searchvs.svg" alt="" />
+      </div>
+    </div>
+    <slot name="footer"></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'TheFilter',
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    actions: {
+      type: Array,
+      default: () => [],
+    },
+    switchItems: {
+      type: Array,
+      default: () => [],
+    },
+    switchValue: {
+      type: String,
+      default: '',
+    },
+    filters: {
+      type: Array,
+      default: () => [],
+    },
+    createUrl: {
+      type: String,
+      default: '',
+    },
+    showSwitch: {
+      type: Boolean,
+      default: false,
+    },
+    showMiddle: {
+      type: Boolean,
+      default: true,
+    },
+    subscribers: {
+      type: Number,
+      default: null,
+    },
+    activeBefore: {
+      type: Date,
+      default: null,
+    },
+    showBottom: {
+      type: Boolean,
+      default: true,
+    },
+  },
+}
+</script>

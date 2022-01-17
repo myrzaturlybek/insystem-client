@@ -21,13 +21,27 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // '~/assets/sass/app.scss',
+    '~/assets/css/icons.css',
+    '~/assets/css/app.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/Header',
+      '~/components/Sidebar',
+      '~/components/Filter',
+      '~/components/Product',
+      '~/components/Showroom',
+      '~/components/Order',
+    ],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -35,6 +49,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

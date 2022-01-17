@@ -1,0 +1,109 @@
+.custom-select-main {
+  position: relative;
+  width: 100%;
+  font-family: $font-family-sans-serif;
+  select {
+  display: none;
+  }
+  .select-selected {
+     background-color: #fff;
+     color: #4F4F4F;
+    &:before{
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: "";
+        z-index: 3;
+        width: 33px;
+        height: 100%;
+
+     }
+     &:after{
+     position: absolute;
+     content: url(/chevron-down.svg);
+      top: 10px;
+      z-index: 5;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      transition: all .3s ease-out;
+      }
+      &.select-arrow-active{
+      &:after{
+        transform: rotateX(180deg);
+        top: 12px;
+      }
+    }
+  }
+
+    .select-items{
+      div{
+      color: #4F4F4F;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      border-bottom-color:  $main-grey_color;
+      cursor: pointer;
+      user-select: none;
+      &:last-child{
+        border-bottom: none;
+      }
+      }
+    }
+    .select-selected {
+      color: #4F4F4F;
+      padding: 6px 10px;
+      padding-left: 0;
+      border: 1px solid transparent;
+      border-bottom-color: $main-grey_color;
+      cursor: pointer;
+      user-select: none;
+      color: $header-text_color;
+      font-size: 15px;
+    }
+    .select-items {
+      position: absolute;
+      background-color: #fff;
+      color: #4F4F4F;
+      border: 1px solid #D3D3D3;
+      border-radius: $border-radius-default;
+      margin-top: 5px;
+      top: 100%;
+      left: 0;
+      right: 0;
+      font-size: 14px;
+      z-index: 99;
+      transform: scaleY(1);
+      transform-origin: top;
+      max-height: 220px;
+      overflow-y: auto;
+      transition: all .3s ease-out;
+      &::scrollbar-track{
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: #F5F5F5;
+      }
+      &::scrollbar{
+      width: 3px;
+      background-color: #F5F5F5;
+      }
+      &::scrollbar-thumb{
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+      }
+      div{
+        &:hover{
+          background-color: $main-grey_color;
+        }
+      }
+    }
+    .select-hide {
+      transform: scaleY(0);
+    }
+     .ui-btn-icon-right{
+      span{
+        display: none;
+      }
+     }
+}
+
