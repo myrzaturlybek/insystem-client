@@ -116,7 +116,7 @@ export default {
       clients: {
         suppliers: new Array(7).fill().map((e, i) => {
           return {
-            url: `clients/client/${i}`,
+            url: `clients/${i}`,
             title: 'Клиент ID 00000001',
             dateTime: new Date(),
             picked: false,

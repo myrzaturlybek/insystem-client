@@ -56,6 +56,12 @@
         />
       </div>
     </div>
+    <div
+      v-if="bottomText"
+      class="m16-0 general-body-item-middle border-none p0 bold-text"
+    >
+      {{ bottomText }}
+    </div>
     <div v-if="showBottomLine" class="sidebar-top-line"></div>
   </div>
 </template>
@@ -84,6 +90,10 @@ export default {
     showBottom: {
       type: Boolean,
       default: true,
+    },
+    bottomText: {
+      type: String,
+      default: null,
     },
     status: {
       type: String,

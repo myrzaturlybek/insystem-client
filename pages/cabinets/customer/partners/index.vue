@@ -160,7 +160,7 @@ export default {
       partners: {
         current: new Array(7).fill().map((e, i) => {
           return {
-            url: `partners/partner/${i}`,
+            url: `partners/${i}`,
             title: 'Партнёр ID 00000001',
             dateTime: new Date(),
             picked: false,

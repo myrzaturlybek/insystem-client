@@ -40,6 +40,8 @@ export default {
       '~/components/Product',
       '~/components/Showroom',
       '~/components/Order',
+      '~/components/Task',
+      '~/components/Client',
     ],
   },
 

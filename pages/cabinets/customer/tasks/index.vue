@@ -156,7 +156,7 @@ export default {
       tasks: {
         my: new Array(7).fill().map((e, i) => {
           return {
-            url: `tasks/task/${i}`,
+            url: `tasks/${i}`,
             title: 'Задание № 00000001',
             dateTime: new Date(),
             status: 'published',
@@ -169,7 +169,7 @@ export default {
         }),
         toMe: new Array(7).fill().map((e, i) => {
           return {
-            url: `tasks/task/${i}`,
+            url: `tasks/${i}`,
             title: 'Задание № 00000001',
             dateTime: new Date(),
             status: 'new',

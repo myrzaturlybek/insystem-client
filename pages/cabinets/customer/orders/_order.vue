@@ -14,6 +14,22 @@
       @toggle="toggle"
     ></product-header>
     <in-order></in-order>
+    <way-to title="Способ получения" :ways="waysToGet"></way-to>
+    <product-location title="Адрес доставки"></product-location>
+    <product-schedule
+      title="Условия доставки"
+      :info="deliveryTerms"
+    ></product-schedule>
+    <product-schedule
+      title="Данные получателя"
+      :info="recipientData"
+      :notes="recipientNotes"
+    ></product-schedule>
+    <way-to title="Способ оплаты" :ways="paymentMethods"></way-to>
+    <product-schedule
+      title="Дополнительно"
+      :info="additionally"
+    ></product-schedule>
   </div>
 </template>
 
@@ -81,6 +97,66 @@ export default {
           text: 'Возврат',
           color: '#000000',
           value: 'return',
+        },
+      ],
+      deliveryTerms: [
+        {
+          title: 'Дата доставки',
+          text: '09.08.2019',
+        },
+        {
+          title: 'Время доставки',
+          text: '12:00',
+        },
+      ],
+      recipientData: [
+        {
+          title: 'Имя и Фамилия',
+          text: 'Анна Морана',
+        },
+        {
+          title: 'Сотовый телефон',
+          text: '+7 777 777 77 77',
+        },
+      ],
+      recipientNotes:
+        'Пожалуйста, указывайте реальные данные — у вас могут попросить паспорт, прежде чем вручить оплаченный заказ.',
+
+      waysToGet: [
+        {
+          title: 'Доставка курьером',
+          text: 'Заказ приедет по указанному адресу',
+          isSelected: true,
+        },
+        {
+          title: 'Самовывоз',
+          text: 'Можно будет забрать из пунктов выдачи',
+        },
+        {
+          title: 'Экспресс доставка',
+          text: 'Стоимость доставки будет платная',
+        },
+      ],
+      paymentMethods: [
+        {
+          title: 'Оплата онлайн',
+          text: 'Банковской картой',
+          isSelected: true,
+        },
+        {
+          title: 'Оплата наличными',
+          text: 'При получении',
+        },
+        {
+          title: 'Оплата по счету',
+          text: 'Через банк',
+        },
+      ],
+      additionally: [
+        {
+          title: 'Ваш комментарий',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh cras praesent quis pharetra vehicula mattis ut erat.',
+          fullSize: true,
         },
       ],
     }

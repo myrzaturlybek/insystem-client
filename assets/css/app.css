@@ -42521,6 +42521,10 @@ a h1:hover {
   padding-left: 8px !important;
 }
 
+.pl16 {
+  padding-left: 16px !important;
+}
+
 .pr8 {
   padding-right: 8px !important;
 }
@@ -43271,7 +43275,7 @@ input.apple-switch:after {
 
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 30% 70%;
 }
 
 .main-header {
@@ -46282,4 +46286,68 @@ input.apple-switch:checked:after {
 .showcase-item {
   border: 1px solid #ebebeb;
   border-radius: 10px;
+}
+
+.way-to-get {
+  padding: 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+}
+
+.way-to-get.active_way {
+  border: none;
+  background-color: #333333;
+}
+
+.bg-black {
+  background: #333333;
+}
+
+.bg-green {
+  background: #33b601;
+}
+
+.br10 {
+  border-radius: 10px !important;
+}
+
+.feedback-button {
+  padding: 8px 50px;
+  border: 1px solid #ebebeb;
+  font-weight: bold;
+}
+
+.stats div {
+  margin-left: 100px;
+}
+
+.stats div:first-child {
+  margin-left: 0;
+}
+
+.cabinet-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.cabinet-carousel-item {
+  border: 1px solid #ebebeb;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.cabinet-carousel-item_img {
+  width: 100%;
+}
+
+.task-item-title {
+  font-size: 18px !important;
+}
+
+.task-brand-carousel-item-img {
+  padding: 44px 0 !important;
 }
