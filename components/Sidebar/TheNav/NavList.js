@@ -3,16 +3,16 @@
 
 export default [
   { title: "Главная", icon: "home" },
-  { title: "Компания", icon: "alert-circle", url: "/cabinets/customer/company" },
-  { title: "Услуги", icon: "truck", url: "/cabinets/customer/services" },
-  { title: "Работы", icon: "image", url: "/cabinets/customer/works" },
-  { title: "Товары", icon: "briefcase", url: "/cabinets/customer/goods" },
-  { title: "Бренды", icon: "bold", url: "/cabinets/customer/brands" },
-  { title: "Шоурумы", icon: "map", url: "/cabinets/customer/showrooms" },
-  { title: "Витрины", icon: "sidebar", url: "/cabinets/customer/showcases" },
-  { title: "Заказы", icon: "file-text", url: "/cabinets/customer/orders" },
-  { title: "Задания", icon: "clipboard", url: "/cabinets/customer/tasks" },
-  { title: "Клиенты", icon: "users", url: "/cabinets/customer/clients" },
-  { title: "Партнёры", icon: "user-check", url: "/cabinets/customer/partners" },
-  { title: "Сотрудники", icon: "user-plus", url: "/cabinets/customer/employees" }
+  { title: "Компания", icon: "alert-circle", url: "/cabinets/company" },
+  { title: "Услуги", icon: "truck", url: "/cabinets/services" },
+  { title: "Работы", icon: "image", url: "/cabinets/works" },
+  { title: "Товары", icon: "briefcase", url: "/cabinets/goods" },
+  { title: "Бренды", icon: "bold", url: "/cabinets/brands" },
+  { title: "Шоурумы", icon: "map", url: "/cabinets/showrooms" },
+  { title: "Витрины", icon: "sidebar", url: "/cabinets/showcases" },
+  { title: "Заказы", icon: "file-text", url: "/cabinets/orders" },
+  { title: "Задания", icon: "clipboard", url: "/cabinets/tasks" },
+  { title: "Клиенты", icon: "users", url: "/cabinets/clients" },
+  { title: "Партнёры", icon: "user-check", url: "/cabinets/partners" },
+  { title: "Сотрудники", icon: "user-plus", url: "/cabinets/employees" }
 ];

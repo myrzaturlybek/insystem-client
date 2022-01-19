@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <nuxt-child></nuxt-child>
+  </div>
 </template>
 
 <script>
