@@ -161,7 +161,7 @@ export default {
       employees: {
         employees: new Array(3).fill().map((e, i) => {
           return {
-            url: `employees/employee/${i}`,
+            url: `employees/${i}`,
             title: 'Сотрудник ID 00000001',
             dateTime: new Date(),
             picked: false,
