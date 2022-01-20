@@ -1,17 +1,32 @@
-# этап сборки (build stage)
-FROM node:lts-alpine as build-stage
-WORKDIR /app
-COPY package*.json ./
+FROM node:11.13.0-alpine
+
+# create destination directory
+RUN mkdir -p /usr/src/nuxt-app
+WORKDIR /usr/src/nuxt-app
+
+# update and install dependency
+RUN apk update && apk upgrade
+RUN apk add git
+
+# copy the app, note .dockerignore
+COPY . /usr/src/nuxt-app/
 RUN npm install
-COPY . .
+
+# build necessary, even if no static files are needed,
+# since it builds the server as well
 RUN npm run build
+RUN npm run generate
 
-# этап production (production-stage)
-FROM nginx:stable-alpine as production-stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# expose 3000 on container
+EXPOSE 3000
 
+# set app serving to permissive / assigned
+ENV NUXT_HOST=0.0.0.0
+# set app port
+ENV NUXT_PORT=3000
 
-# docker build -t vuejs-cookbook/dockerize-vuejs-app .
-# docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
+# start the app
+CMD [ "npm", "start" ]
+
+# docker build -t fe .
+# docker run -it -p 3000:3000 fe
