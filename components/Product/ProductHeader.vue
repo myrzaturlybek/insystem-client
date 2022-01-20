@@ -41,6 +41,12 @@
         @changeStatus="changeStatus"
       ></the-status>
     </div>
+    <div
+      v-if="bottomText"
+      class="m16-0 general-body-item-middle border-none p0 bold-text"
+    >
+      {{ bottomText }}
+    </div>
     <div v-if="showMiddleLine" class="sidebar-top-line"></div>
     <div
       v-if="showBottom"
@@ -56,11 +62,13 @@
         />
       </div>
     </div>
-    <div
-      v-if="bottomText"
-      class="m16-0 general-body-item-middle border-none p0 bold-text"
-    >
-      {{ bottomText }}
+
+    <div v-if="tabsItems.length > 0" class="mt32">
+      <product-tabs
+        :tabs-items="tabsItems"
+        :value="tabValue"
+        @switch="$emit('tabSwitch', value)"
+      ></product-tabs>
     </div>
     <div v-if="showBottomLine" class="sidebar-top-line"></div>
   </div>
@@ -126,6 +134,14 @@ export default {
     middleStatusEditable: {
       type: Boolean,
       default: true,
+    },
+    tabsItems: {
+      type: Array,
+      default: () => [],
+    },
+    tabValue: {
+      type: String,
+      default: '',
     },
   },
   computed: {
