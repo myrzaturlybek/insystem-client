@@ -96,8 +96,8 @@
           ></product-item-header>
         </template>
         <template #body>
-          <div class="mt16 white-container">
-            <div class="bold-text mb16">{{ position.name }}</div>
+          <div class="p16">
+            <div class="bold-text mb16">Описание</div>
             <div class="mb16 little-grey-text">{{ position.description }}</div>
             <div class="sidebar-top-line"></div>
             <div v-for="employee in position.employees" :key="employee.id">
@@ -209,6 +209,16 @@ export default {
               dateTime: moment(new Date()).format('DD.MM.YYYY / hh:mm'),
             },
           ],
+        },
+        {
+          name: 'Бухгалтер',
+          checked: false,
+
+          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sit pretium proin quis malesuada netus sapien consequat nunc.
+            Non elementum turpis elementum tincidunt vitae quam eget.
+            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
+            libero ut aliquam.`,
         },
       ],
     }

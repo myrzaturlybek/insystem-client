@@ -46311,6 +46311,14 @@ input.apple-switch:checked:after {
   border-radius: 10px !important;
 }
 
+.border-gray {
+  border: 1px solid #ebebeb;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid #ebebeb;
+}
+
 .feedback-button {
   padding: 8px 50px;
   border: 1px solid #ebebeb;
@@ -46350,4 +46358,8 @@ input.apple-switch:checked:after {
 
 .task-brand-carousel-item-img {
   padding: 44px 0 !important;
+}
+
+.py16 {
+  padding: 16px 0;
 }

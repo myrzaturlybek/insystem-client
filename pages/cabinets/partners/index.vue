@@ -177,7 +177,7 @@ export default {
         }),
         requests: new Array(7).fill().map((e, i) => {
           return {
-            url: `partners/partner/${i}`,
+            url: `partners/requests/${i}`,
             title: 'Партнёр ID 00000001',
             dateTime: new Date(),
             picked: false,

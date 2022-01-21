@@ -63,7 +63,10 @@
       </div>
     </div>
 
-    <div v-if="tabsItems.length > 0" class="mt32">
+    <div
+      v-if="tabsItems.length > 0"
+      class="mt32 d-flex justify-content-between"
+    >
       <product-tabs
         :tabs-items="tabsItems"
         :value="tabValue"
@@ -73,6 +76,14 @@
           }
         "
       ></product-tabs>
+      <div>
+        <button class="btn bg-black br10 text-white px-5 bold-text mr16">
+          Запрос отправлен
+        </button>
+        <button class="btn bg-white br10 px-5 bold-text border-gray">
+          Отменить
+        </button>
+      </div>
     </div>
     <div v-if="showBottomLine" class="sidebar-top-line"></div>
   </div>
