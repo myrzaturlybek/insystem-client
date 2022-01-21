@@ -16,6 +16,14 @@
           {{ action.text }}
         </div>
       </div>
+      <div v-if="checked !== null" class="d-flex align-items-center">
+        <input
+          :checked="checked"
+          class="apple-switch"
+          type="checkbox"
+          @change="$emit('check', $event)"
+        />
+      </div>
     </div>
     <div v-if="showMiddle" class="general-content-header-middle">
       <div>
@@ -115,6 +123,10 @@ export default {
     showBottom: {
       type: Boolean,
       default: true,
+    },
+    checked: {
+      type: Boolean,
+      default: null,
     },
   },
 }

@@ -67,7 +67,11 @@
       <product-tabs
         :tabs-items="tabsItems"
         :value="tabValue"
-        @switch="$emit('tabSwitch', value)"
+        @switch="
+          (value) => {
+            $emit('tabSwitch', value)
+          }
+        "
       ></product-tabs>
     </div>
     <div v-if="showBottomLine" class="sidebar-top-line"></div>
