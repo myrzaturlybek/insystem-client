@@ -2,7 +2,12 @@
   <div class="white-container">
     <div class="general-content-header-top">
       <h2 class="general-content-header-title">
-        <img class="mr16 icon24" src="/chevron-leftvs.svg" alt="" />
+        <img
+          v-if="backTo"
+          class="mr16 icon24 back-to"
+          src="/chevron-leftvs.svg"
+          @click="$router.go(-1)"
+        />
         {{ title }}
       </h2>
       <div
@@ -40,12 +45,21 @@
         :editable="middleStatusEditable"
         @changeStatus="changeStatus"
       ></the-status>
+      <div v-if="!verified" class="d-flex">
+        <p class="little-grey-text mr16">Не проверенный</p>
+        <img src="/shield-off.svg" />
+      </div>
     </div>
     <div
       v-if="bottomText"
-      class="m16-0 general-body-item-middle border-none p0 bold-text"
+      class="m16-0 general-body-item-middle border-none p0"
     >
-      {{ bottomText }}
+      <p class="bold-text">Скидка клиенту: 0</p>
+      <div class="d-flex">
+        <p>Процент</p>
+        <p class="ml16">%</p>
+        <i class="icon-chevron-down ml16"></i>
+      </div>
     </div>
     <div v-if="showMiddleLine" class="sidebar-top-line"></div>
     <div
@@ -98,6 +112,10 @@ export default {
       type: String,
       default: '',
     },
+    backTo: {
+      type: Boolean,
+      default: true,
+    },
     actions: {
       type: Array,
       default: () => [],
@@ -107,6 +125,10 @@ export default {
     showStatus: Boolean,
     free: Boolean,
     showMiddle: {
+      type: Boolean,
+      default: true,
+    },
+    verified: {
       type: Boolean,
       default: true,
     },

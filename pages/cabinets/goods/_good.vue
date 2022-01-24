@@ -15,12 +15,12 @@
     <product-selected-categories
       :categories="categories"
     ></product-selected-categories>
-    <product-photos title="Фотографии услуги" :photos="photos"></product-photos>
+    <product-photos title="Фотографии товара" :photos="photos"></product-photos>
     <product-info
-      title="Информация об услуге"
-      :name="serviceName"
-      :description="serviceDescription"
-      :notes="serviceNotes"
+      title="Информация о товаре"
+      :name="goodName"
+      :description="goodDescription"
+      :notes="goodNotes"
     ></product-info>
     <product-price></product-price>
     <product-specs></product-specs>
@@ -40,10 +40,10 @@ export default {
         { text: 'Нет в наличии', color: '#D80808', value: 'notAvailable' },
       ],
       status: 'inStock',
-      serviceName: 'Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)',
-      serviceDescription:
+      goodName: 'Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)',
+      goodDescription:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit pretium proin quis malesuada netus sapien consequat nunc. Non elementum turpis elementum tincidunt vitae quam eget. Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id libero ut aliquam.',
-      serviceNotes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      goodNotes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       photos: [{ url: '/-_Featured_Image 2.svg' }],
       categories: [
         {

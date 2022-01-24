@@ -42537,6 +42537,10 @@ a h1:hover {
   padding: 16px 0 !important;
 }
 
+.p0-16 {
+  padding: 0 16px !important;
+}
+
 .m0-16 {
   margin: 0 16px !important;
 }
@@ -43145,6 +43149,29 @@ input.apple-switch:after {
 .categories-black-rectangle {
   height: 40px !important;
   align-items: start;
+}
+
+.select-category-option {
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.select-category-option-selected, .select-category-option:hover {
+  border: 1px solid #333333;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.select-category-option-text {
+  margin-top: 4px;
+}
+
+.category-icon {
+  font-size: 22px;
 }
 
 .big-white-text {
@@ -46362,4 +46389,85 @@ input.apple-switch:checked:after {
 
 .py16 {
   padding: 16px 0;
+}
+
+.back-to {
+  cursor: pointer;
+}
+
+.add-photo-container {
+  position: relative;
+}
+
+.add-photo-input {
+  display: none;
+}
+
+.cabinet-input-file {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  width: 187px;
+  height: 187px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #BBBBBC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-banner-input {
+  width: 100%;
+  height: 200px;
+}
+
+.cabinet-input-file .content i {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.cabinet-input-file .content {
+  text-align: center;
+}
+
+.add-info-photo {
+  position: relative;
+}
+
+.add-photo-input-button {
+  position: absolute;
+  width: 168px;
+  height: 168px;
+  top: 16px;
+  left: 32px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.general-content-header-top h2,
+.general-content-header-top h3 {
+  font-weight: bold;
+}
+
+.add-avatar-button {
+  width: 68px;
+  height: 68px;
+  border: 1px solid #ebebeb;
+  color: #bbbbbc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-avatar-button i {
+  font-size: 24px;
 }
