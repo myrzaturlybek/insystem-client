@@ -22,6 +22,7 @@
         v-if="status !== null"
         :value="status"
         :statuses="statuses"
+        :editable="statusEditable"
         @changeStatus="changeStatus"
       ></the-status>
       <p v-if="rightText" class="bold-text">
@@ -86,6 +87,10 @@ export default {
     switchOn: {
       type: Boolean,
       default: false,
+    },
+    statusEditable: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {

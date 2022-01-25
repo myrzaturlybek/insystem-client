@@ -196,6 +196,11 @@ export default {
     switchCategory(value) {
       if (this.switchValue !== value) {
         this.switchValue = value
+        if (this.switchValue === 'current') {
+          this.actions[1] = { text: 'Экспорт' }
+        } else if (value === 'requests') {
+          this.actions[1] = { text: 'Добавить' }
+        }
         this.resetPicks()
       }
     },

@@ -27,6 +27,7 @@
           :date-time="task.dateTime"
           :status="task.status"
           :statuses="statuses[switchValue]"
+          :status-editable="task.statusEditable"
           :checked="task.picked"
           :show-checkbox="showCheckbox"
           @check="
@@ -165,6 +166,7 @@ export default {
             name: 'Поставка товара',
             views: 2,
             feedback: 2,
+            statusEditable: false,
           }
         }),
         toMe: new Array(7).fill().map((e, i) => {

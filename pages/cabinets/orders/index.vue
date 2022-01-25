@@ -27,6 +27,7 @@
           :date-time="order.dateTime"
           :status="order.status"
           :statuses="statuses"
+          :status-editable="order.statusEditable"
           :checked="order.checked"
           :show-checkbox="showCheckbox"
           @check="
@@ -163,6 +164,7 @@ export default {
             dateTime: new Date(),
             status: 'inProcess',
             checked: false,
+            statusEditable: false,
             goods: [
               {
                 name: 'Mobilka Electronic',
