@@ -2,7 +2,7 @@
   <div class="mt16 white-container">
     <div class="general-content-header-top">
       <div>
-        <h3 class="general-body-item-title">Выберите категорию</h3>
+        <h3 class="general-body-item-title">{{ title }}</h3>
       </div>
       <div class="sidebar-top-left">
         <div class="">
@@ -23,9 +23,17 @@
       >
         <div v-if="category.icon" :class="[category.icon, 'category-icon']" />
         <div
-          :class="['ml16', { 'select-category-option-text': category.icon }]"
+          :class="[
+            { ml16: category.icon },
+            { 'select-category-option-text': category.icon },
+          ]"
         >
-          <p>{{ category.name }}</p>
+          <p v-if="category.title" class="bold-text mb16">
+            {{ category.title }}
+          </p>
+          <p :class="{ 'little-grey-text': category.title }">
+            {{ category.name }}
+          </p>
         </div>
       </div>
     </div>
@@ -35,6 +43,10 @@
 <script>
 export default {
   props: {
+    title: {
+      type: String,
+      default: 'Выберите категорию',
+    },
     categories: {
       type: Array,
       default: () => [],

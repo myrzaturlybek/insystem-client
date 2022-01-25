@@ -9,7 +9,7 @@
       date-time-text="Создана"
     ></product-header>
     <add-info
-      title="Карточка студента"
+      title="Карточка сотрудника"
       have-avatar
       :info="employeeCard"
     ></add-info>

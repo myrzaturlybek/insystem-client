@@ -136,7 +136,6 @@ textarea,
 .radio-buttons {
   border: none !important;
   border-bottom: 1px solid #ebebeb !important;
-  color: #bbbbbc;
   padding: 16px 0;
 }
 

@@ -13,7 +13,11 @@
     ></product-header>
     <task-feedback selected></task-feedback>
     <task-feedback></task-feedback>
-    <product-schedule :info="description" :stats="stats"></product-schedule>
+    <product-schedule
+      title="Описание задания"
+      :info="description"
+      :stats="stats"
+    ></product-schedule>
     <cabinet-carousel title="Выбранные товары">
       <template #carousel-items>
         <swiper-slide v-for="i in 9" :key="i" class="cabinet-carousel-item">
@@ -47,7 +51,7 @@
         </swiper-slide>
       </template>
     </cabinet-carousel>
-    <product-location></product-location>
+    <product-location title="Адрес доставки"></product-location>
     <product-schedule title="Срок выполнения" :info="period"></product-schedule>
     <way-to title="Способ оплаты" :ways="paymentMethods"></way-to>
     <product-schedule

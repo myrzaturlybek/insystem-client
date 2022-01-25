@@ -27,7 +27,7 @@
         :type="text"
         name="location"
         :value="location"
-        label="Местоположение"
+        :label="addressLabel"
         placeholder="Город, улиц, дом, квартира"
         icon="icon-navigation"
       ></custom-input>
@@ -64,6 +64,10 @@ export default {
     cityName: {
       type: String,
       default: null,
+    },
+    addressLabel: {
+      type: String,
+      default: 'Местоположение',
     },
     addButton: Boolean,
   },

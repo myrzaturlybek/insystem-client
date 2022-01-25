@@ -46327,7 +46327,7 @@ input.apple-switch:checked:after {
 }
 
 .bg-black {
-  background: #333333;
+  background: #333333 !important;
 }
 
 .bg-green {
