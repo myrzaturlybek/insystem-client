@@ -45,9 +45,11 @@
         :editable="middleStatusEditable"
         @changeStatus="changeStatus"
       ></the-status>
-      <div v-if="!verified" class="d-flex">
-        <p class="little-grey-text mr16">Не проверенный</p>
-        <img src="/shield-off.svg" />
+      <div v-if="showVerified" class="d-flex">
+        <p v-if="!verified" class="little-grey-text mr16">Не проверенный</p>
+        <p v-if="verified" class="text-success mr16">Проверенный</p>
+        <img v-if="!verified" src="/shield-off.svg" />
+        <i v-if="verified" class="icon-shield text-success"></i>
       </div>
     </div>
     <div
@@ -127,6 +129,10 @@ export default {
     showMiddle: {
       type: Boolean,
       default: true,
+    },
+    showVerified: {
+      type: Boolean,
+      default: false,
     },
     verified: {
       type: Boolean,

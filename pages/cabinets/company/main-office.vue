@@ -1,18 +1,19 @@
 <template>
   <div>
     <product-header
-      title="Завершение регистрации"
+      title="Головная ID 0000001"
       :actions="actions"
+      :show-bottom="false"
       :verified="false"
       show-verified
-      :show-bottom="false"
-      date-time-text="Создана"
-      :back-to="false"
     ></product-header>
     <product-selected-categories
       :categories="categories"
     ></product-selected-categories>
-    <add-info title="Данные для входа" :info="loginDetails"></add-info>
+    <product-schedule
+      title="Данные для входа"
+      :info="loginDetails"
+    ></product-schedule>
     <add-info title="Контактное лицо" :info="personInfo" have-avatar></add-info>
     <add-info
       title="Информация о компании"
@@ -42,11 +43,10 @@
 
 <script>
 export default {
-  name: 'CabinetRegistration',
   layout: 'cabinet',
   data() {
     return {
-      actions: [{ text: 'Сохранить' }, { text: 'Отмена' }],
+      actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       categories: [
         {
           name: 'Смартфоны и гаджеты',
@@ -61,34 +61,24 @@ export default {
       ],
       loginDetails: [
         {
-          name: 'name',
-          value: 'Revenj',
-          label: 'Название компании',
-          placeholder: 'Введите назание',
+          text: 'Revenj',
+          title: 'Название компании',
         },
         {
-          name: 'organizationalForm',
-          value: null,
-          label: 'Организационная форма',
-          placeholder: 'Введите назание',
+          text: 'Товарищество с ограниченной ответственностью',
+          title: 'Организационная форма',
         },
         {
-          name: 'phoneNumber',
-          value: '+7 (700) 700 70 70',
-          label: 'Номер телефона',
-          placeholder: 'Введите номер',
+          text: '+7 (700) 700 70 70',
+          title: 'Номер телефона',
         },
         {
-          name: 'email',
-          value: 'pup@gmail.com',
-          label: 'Электронная почта',
-          placeholder: 'Введите номер',
+          text: 'pup@gmail.com',
+          title: 'Электронная почта',
         },
         {
-          name: 'password',
-          value: 'Zxc123',
-          label: 'Пароль',
-          placeholder: 'Введите пароль',
+          text: 'Zxc123',
+          title: 'Пароль',
         },
       ],
       personInfo: [

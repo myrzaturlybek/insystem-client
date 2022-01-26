@@ -24,7 +24,7 @@
     </div>
     <div class="mt32">
       <custom-input
-        :type="text"
+        type="text"
         name="location"
         :value="location"
         :label="addressLabel"

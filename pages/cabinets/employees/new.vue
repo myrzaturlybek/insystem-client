@@ -5,6 +5,7 @@
       :back-to="false"
       :actions="actions"
       :verified="false"
+      show-verified
       show-bottom-line
       date-time-text="Создана"
     ></product-header>

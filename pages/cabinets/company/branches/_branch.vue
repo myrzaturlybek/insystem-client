@@ -1,52 +1,41 @@
 <template>
   <div>
     <product-header
-      title="Завершение регистрации"
+      title="Филиал ID 0000001"
       :actions="actions"
-      :verified="false"
-      show-verified
       :show-bottom="false"
-      date-time-text="Создана"
-      :back-to="false"
+      :verified="true"
+      show-verified
     ></product-header>
     <product-selected-categories
       :categories="categories"
     ></product-selected-categories>
-    <add-info title="Данные для входа" :info="loginDetails"></add-info>
+    <product-schedule
+      title="Данные для входа"
+      :info="loginDetails"
+    ></product-schedule>
     <add-info title="Контактное лицо" :info="personInfo" have-avatar></add-info>
-    <add-info
-      title="Информация о компании"
-      :info="companyInfo"
-      have-photo
-    ></add-info>
     <add-info title="Регистрационные данные" :info="regInfo"></add-info>
-    <product-add-photos title="Фотографии документов"></product-add-photos>
-    <add-info title="График работы" :info="schedule"></add-info>
-    <select-category
-      title="Способ оплаты"
-      :categories="paymentMethods"
-      @selectCategory="selectPaymentMethod"
-    ></select-category>
-    <select-category
-      title="Способ получения"
-      :categories="getMethods"
-      @selectCategory="selectGetMethod"
-    ></select-category>
-    <add-location
+    <product-photos
+      title="Фотографии документов"
+      :photos="docs"
+    ></product-photos>
+    <product-schedule title="График работы" :info="schedule"></product-schedule>
+    <way-to title="Способ оплаты" :ways="paymentMethods"></way-to>
+    <way-to title="Способ получения" :ways="waysToGet"></way-to>
+    <product-location
       title="Местоположение склада"
-      address-label="Склад 1"
-      add-button
-    ></add-location>
+      :locations="locations"
+    ></product-location>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CabinetRegistration',
   layout: 'cabinet',
   data() {
     return {
-      actions: [{ text: 'Сохранить' }, { text: 'Отмена' }],
+      actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       categories: [
         {
           name: 'Смартфоны и гаджеты',
@@ -61,34 +50,16 @@ export default {
       ],
       loginDetails: [
         {
-          name: 'name',
-          value: 'Revenj',
-          label: 'Название компании',
-          placeholder: 'Введите назание',
+          text: '+7 (700) 700 70 70',
+          title: 'Номер телефона',
         },
         {
-          name: 'organizationalForm',
-          value: null,
-          label: 'Организационная форма',
-          placeholder: 'Введите назание',
+          text: 'pup@gmail.com',
+          title: 'Электронная почта',
         },
         {
-          name: 'phoneNumber',
-          value: '+7 (700) 700 70 70',
-          label: 'Номер телефона',
-          placeholder: 'Введите номер',
-        },
-        {
-          name: 'email',
-          value: 'pup@gmail.com',
-          label: 'Электронная почта',
-          placeholder: 'Введите номер',
-        },
-        {
-          name: 'password',
-          value: 'Zxc123',
-          label: 'Пароль',
-          placeholder: 'Введите пароль',
+          text: 'Zxc123',
+          title: 'Пароль',
         },
       ],
       personInfo: [
@@ -123,16 +94,6 @@ export default {
               },
             ],
           },
-        },
-      ],
-      companyInfo: [
-        {
-          type: 'textarea',
-          name: 'description',
-          value: '',
-          label: 'Описание',
-          placeholder: 'Введите описание',
-          fullSize: 'true',
         },
       ],
       regInfo: [
@@ -257,85 +218,62 @@ export default {
           },
         },
       ],
+      docs: [{ url: '/doc.png' }, { url: '/doc.png' }, { url: '/doc2.png' }],
       schedule: [
         {
-          type: 'select',
-          name: 'position',
-          label: 'Рабочие дни',
-          value: null,
-          select: {
-            options: [
-              {
-                value: null,
-                text: 'Пн - Пт',
-              },
-            ],
-          },
+          title: 'Рабочее время',
+          text: 'С 10 до 18',
         },
         {
-          type: 'select',
-          name: 'position',
-          label: 'Рабочее время',
-          value: null,
-          select: {
-            options: [
-              {
-                value: null,
-                text: 'С 10 до 18',
-              },
-            ],
-          },
+          title: 'Рабочие дни',
+          text: 'Пн - Пт',
+        },
+      ],
+      waysToGet: [
+        {
+          title: 'Доставка курьером',
+          text: 'Заказ приедет по указанному адресу',
+          isSelected: true,
+        },
+        {
+          title: 'Самовывоз',
+          text: 'Можно будет забрать из пунктов выдачи',
+          isSelected: true,
+        },
+        {
+          title: 'Экспресс доставка',
+          text: 'Стоимость доставки будет платная',
+          isSelected: true,
         },
       ],
       paymentMethods: [
         {
           title: 'Оплата онлайн',
-          name: 'Банковской картой',
-          selected: false,
+          text: 'Банковской картой',
+          isSelected: true,
         },
         {
           title: 'Оплата наличными',
-          name: 'При получении',
-          selected: false,
+          text: 'При получении',
+          isSelected: true,
         },
         {
           title: 'Оплата по счету',
-          name: 'Через банк',
-          selected: false,
+          text: 'Через банк',
+          isSelected: true,
         },
       ],
-      getMethods: [
+      locations: [
         {
-          title: 'Доставка курьером',
-          name: 'Заказ приедет по указанному адресу',
-          selected: false,
+          title: 'Склад 1',
+          address: 'Раимбека 369, уг. ул. Брусиловского, дом 33',
         },
         {
-          title: 'Самовывоз',
-          name: 'Можно будет забрать из пунктов выдачи',
-          selected: false,
-        },
-        {
-          title: 'Экспресс доставка',
-          name: 'Стоимость доставки будет платная',
-          selected: false,
+          title: 'Склад 2',
+          address: 'Раимбека 369, уг. ул. Брусиловского, дом 33',
         },
       ],
     }
-  },
-  methods: {
-    selectPaymentMethod(category) {
-      for (const method of this.paymentMethods) {
-        method.selected = false
-      }
-      category.selected = !category.selected
-    },
-    selectGetMethod(category) {
-      for (const method of this.getMethods) {
-        method.selected = false
-      }
-      category.selected = !category.selected
-    },
   },
 }
 </script>

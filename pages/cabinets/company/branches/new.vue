@@ -1,24 +1,20 @@
 <template>
   <div>
     <product-header
-      title="Завершение регистрации"
+      title="Создание филиала"
       :actions="actions"
       :verified="false"
       show-verified
       :show-bottom="false"
-      date-time-text="Создана"
+      date-time-text="Создан"
       :back-to="false"
     ></product-header>
-    <product-selected-categories
+    <select-category
       :categories="categories"
-    ></product-selected-categories>
+      @selectCategory="selectCategory"
+    ></select-category>
     <add-info title="Данные для входа" :info="loginDetails"></add-info>
     <add-info title="Контактное лицо" :info="personInfo" have-avatar></add-info>
-    <add-info
-      title="Информация о компании"
-      :info="companyInfo"
-      have-photo
-    ></add-info>
     <add-info title="Регистрационные данные" :info="regInfo"></add-info>
     <product-add-photos title="Фотографии документов"></product-add-photos>
     <add-info title="График работы" :info="schedule"></add-info>
@@ -50,28 +46,26 @@ export default {
       categories: [
         {
           name: 'Смартфоны и гаджеты',
-          icon: 'smartphone',
+          icon: 'icon-smartphone',
+          selected: false,
         },
         {
-          name: 'Мобильные телефоны',
+          name: 'Ноутбуки и компьютеры',
+          icon: 'icon-monitor',
+          selected: false,
         },
         {
-          name: 'Аксессуары для телефонов',
+          name: 'Бытовая техника',
+          icon: 'icon-speaker',
+          selected: false,
+        },
+        {
+          name: 'Техника для кухни',
+          icon: 'icon-hard-drive',
+          selected: false,
         },
       ],
       loginDetails: [
-        {
-          name: 'name',
-          value: 'Revenj',
-          label: 'Название компании',
-          placeholder: 'Введите назание',
-        },
-        {
-          name: 'organizationalForm',
-          value: null,
-          label: 'Организационная форма',
-          placeholder: 'Введите назание',
-        },
         {
           name: 'phoneNumber',
           value: '+7 (700) 700 70 70',
@@ -85,10 +79,22 @@ export default {
           placeholder: 'Введите номер',
         },
         {
+          name: 'name',
+          value: null,
+          label: 'Придумайте пароль',
+          placeholder: '*******',
+        },
+        {
+          name: 'organizationalForm',
+          value: null,
+          label: 'Повторите пароль',
+          placeholder: '*******',
+        },
+        {
           name: 'password',
           value: 'Zxc123',
-          label: 'Пароль',
-          placeholder: 'Введите пароль',
+          label: 'Введите SMS код',
+          placeholder: '----',
         },
       ],
       personInfo: [
@@ -334,6 +340,9 @@ export default {
       for (const method of this.getMethods) {
         method.selected = false
       }
+      category.selected = !category.selected
+    },
+    selectCategory(category) {
       category.selected = !category.selected
     },
   },
