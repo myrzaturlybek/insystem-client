@@ -42,6 +42,9 @@ export default {
       '~/components/Order',
       '~/components/Task',
       '~/components/Client',
+      '~/components/Reviews',
+      '~/components/Subscriptions',
+      '~/components/Tariffs',
     ],
   },
 

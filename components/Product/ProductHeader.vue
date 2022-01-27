@@ -63,6 +63,9 @@
         <i class="icon-chevron-down ml16"></i>
       </div>
     </div>
+    <div v-if="ballance" class="m16-0 general-body-item-middle border-none p0">
+      <p class="bold-text">Мой баланс: {{ ballance }}</p>
+    </div>
     <div v-if="showMiddleLine" class="sidebar-top-line"></div>
     <div
       v-if="showBottom"
@@ -185,6 +188,10 @@ export default {
     tabValue: {
       type: String,
       default: '',
+    },
+    ballance: {
+      type: String,
+      default: null,
     },
   },
   computed: {
