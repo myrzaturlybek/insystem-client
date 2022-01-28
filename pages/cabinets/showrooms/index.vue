@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     create() {
-      window.location.href = 'showrooms/new'
+      this.$router.push('showrooms/new')
     },
     action(method) {
       method()

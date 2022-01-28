@@ -18,7 +18,7 @@
           v-for="action in actions"
           :key="action.id"
           class="general-content-greytext little-grey-text"
-          @click="$emit('action', action.id)"
+          @click="$emit('action', action.method)"
         >
           {{ action.text }}
         </div>
@@ -102,6 +102,20 @@
         <button class="btn bg-white br10 px-5 bold-text border-gray">
           Отменить
         </button>
+      </div>
+    </div>
+    <div class="mt32 px15">
+      <div class="border-gray h48 br10 row d-flex align-items-center">
+        <input
+          type="text"
+          placeholder="Введите сумму"
+          class="col-md-10 replenish-input"
+        />
+        <div class="col-md-2">
+          <div class="purple-button subscribe-button centralizer">
+            <div class="white">Пополнить</div>
+          </div>
+        </div>
       </div>
     </div>
     <div v-if="showBottomLine" class="sidebar-top-line"></div>

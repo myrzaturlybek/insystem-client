@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     create() {
-      window.location.href = 'works/new'
+      this.$router.push('works/new')
     },
     action(method) {
       method()

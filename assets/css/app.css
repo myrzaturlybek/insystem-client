@@ -42509,6 +42509,10 @@ a h1:hover {
   padding: 16px !important;
 }
 
+.px15 {
+  padding: 0 15px !important;
+}
+
 .ml32 {
   margin-left: 32px !important;
 }
@@ -43126,8 +43130,16 @@ input.apple-switch:after {
   height: 24px !important;
 }
 
+.h48 {
+  height: 48px !important;
+}
+
 .h64 {
   height: 64px !important;
+}
+
+.w-full {
+  width: 100% !important;
 }
 
 .black-rectangle-cont {
@@ -46412,7 +46424,7 @@ input.apple-switch:checked:after {
   height: 187px;
   outline: none;
   white-space: nowrap;
-  -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
   font-size: 24px;
   color: #BBBBBC;
@@ -46470,4 +46482,10 @@ input.apple-switch:checked:after {
 
 .add-avatar-button i {
   font-size: 24px;
+}
+
+.replenish-input {
+  height: 100%;
+  border-radius: 10px;
+  border: none;
 }

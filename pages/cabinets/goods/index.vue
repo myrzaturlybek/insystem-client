@@ -133,7 +133,7 @@ export default {
       })
     },
     create() {
-      window.location.href = 'goods/new'
+      this.$router.push('goods/new')
     },
     action(method) {
       method()

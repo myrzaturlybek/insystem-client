@@ -229,7 +229,7 @@ export default {
       }
     },
     create() {
-      window.location.href = 'orders/new'
+      this.$router.push('orders/new')
     },
     action(method) {
       method()
@@ -260,7 +260,7 @@ export default {
       })
     },
     toCreatePage() {
-      window.location.href = 'orders/new'
+      this.$router.push('orders/new')
     },
   },
 }

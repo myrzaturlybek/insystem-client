@@ -199,7 +199,7 @@ export default {
       })
     },
     create() {
-      window.location.href = 'tasks/new'
+      this.$router.push('tasks/new')
     },
     action(method) {
       method()

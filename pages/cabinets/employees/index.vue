@@ -240,7 +240,7 @@ export default {
       method()
     },
     toCreate() {
-      window.location.href = 'employees/new'
+      this.$router.push('employees/new')
     },
     toggleCheckbox() {
       if (!this.showCheckbox) {

@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     create() {
-      window.location.href = 'services/new'
+      this.$router.push('services/new')
     },
     action(method) {
       method()

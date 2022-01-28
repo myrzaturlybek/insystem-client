@@ -109,7 +109,7 @@ export default {
       method()
     },
     toCreate() {
-      window.location.href = 'company/branches/new'
+      this.$router.push('company/branches/new')
     },
   },
 }

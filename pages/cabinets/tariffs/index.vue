@@ -9,6 +9,7 @@
       :show-bottom="false"
       ballance="100 000 тг"
       show-middle-line
+      @action="action"
     ></product-header>
     <the-filter
       title="История платежей"
@@ -31,9 +32,17 @@ export default {
   layout: 'cabinet',
   data() {
     return {
-      actions: [{ text: 'Пополнить' }],
+      actions: [{ text: 'Пополнить', method: this.toReplenish }],
       filters: ['Пакет', 'Дата', 'Сумма'],
     }
+  },
+  methods: {
+    toReplenish() {
+      this.$router.push('tariffs/replenish')
+    },
+    action(method) {
+      method()
+    },
   },
 }
 </script>
