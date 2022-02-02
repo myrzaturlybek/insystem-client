@@ -42513,6 +42513,10 @@ a h1:hover {
   padding: 0 15px !important;
 }
 
+.px48 {
+  padding: 0 48px !important;
+}
+
 .ml32 {
   margin-left: 32px !important;
 }
@@ -42563,6 +42567,10 @@ a h1:hover {
 
 .mt16 {
   margin-top: 16px !important;
+}
+
+.mt4 {
+  margin-top: 4px !important;
 }
 
 .ml16 {
@@ -46401,6 +46409,14 @@ input.apple-switch:checked:after {
 
 .py16 {
   padding: 16px 0;
+}
+
+.py8 {
+  padding: 8px 0 !important;
+}
+
+.py48 {
+  padding: 48px 0 !important;
 }
 
 .back-to {

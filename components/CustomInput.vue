@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <label>{{ label }}</label>
+    <label v-if="label">{{ label }}</label>
     <input
       v-if="isInput"
       :name="name"
@@ -77,7 +77,7 @@ export default {
     },
     label: {
       type: String,
-      default: '',
+      default: null,
     },
     value: {
       type: String,

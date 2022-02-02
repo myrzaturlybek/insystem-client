@@ -53,6 +53,11 @@
         "
       ></product-item>
     </template>
+
+    <template v-if="switchValue == 'import'">
+      <import-info></import-info>
+      <import-position></import-position>
+    </template>
   </div>
 </template>
 

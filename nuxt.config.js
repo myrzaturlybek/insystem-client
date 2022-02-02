@@ -45,6 +45,7 @@ export default {
       '~/components/Reviews',
       '~/components/Subscriptions',
       '~/components/Tariffs',
+      '~/components/Goods',
     ],
   },
 
