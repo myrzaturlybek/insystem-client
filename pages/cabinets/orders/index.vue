@@ -184,7 +184,7 @@ export default {
         }),
         toMe: new Array(7).fill().map((e, i) => {
           return {
-            url: `orders/${i}`,
+            url: `orders/tome/${i}`,
             title: 'Заказ № 00000001',
             dateTime: new Date(),
             status: 'inProcess',

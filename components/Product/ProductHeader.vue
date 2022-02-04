@@ -57,7 +57,7 @@
       class="m16-0 general-body-item-middle border-none p0"
     >
       <p class="bold-text">Скидка клиенту: 0</p>
-      <div class="d-flex">
+      <div v-if="bottomRightText" class="d-flex">
         <p>Процент</p>
         <p class="ml16">%</p>
         <i class="icon-chevron-down ml16"></i>
@@ -104,7 +104,7 @@
         </button>
       </div>
     </div>
-    <div class="mt32 px15">
+    <div v-if="showReplenish" class="mt32 px15">
       <div class="border-gray h48 br10 row d-flex align-items-center">
         <input
           type="text"
@@ -163,6 +163,10 @@ export default {
       type: String,
       default: null,
     },
+    bottomRightText: {
+      type: Boolean,
+      default: true,
+    },
     status: {
       type: String,
       default: null,
@@ -206,6 +210,10 @@ export default {
     ballance: {
       type: String,
       default: null,
+    },
+    showReplenish: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

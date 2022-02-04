@@ -66,13 +66,18 @@
         </label>
       </div>
       <div v-if="importFromPC" class="col-md-12 mb32">
-        <button class="btn upload-file-button mb16">Загрузить файл</button>
+        <button
+          class="btn upload-file-button mb16"
+          @click="$emit('uploadFile')"
+        >
+          Загрузить файл
+        </button>
         <p class="little-grey-text">
           Формат: XLS, XLSX, CSV, XML, YML размером до 180 МБ, а также Zip, GZip
           архивы
         </p>
       </div>
-      <div class="mb32 col-md-12">
+      <div v-if="!importFromPC" class="mb32 col-md-12">
         <custom-input
           type="text"
           name="importFileLink"
@@ -91,10 +96,19 @@
       <div class="col-md-12 import-settings">
         <div class="d-flex justify-content-between align-items-center">
           <p class="little-grey-text">Настройки импорта</p>
-          <i class="icon-chevron-down little-grey-text"></i>
+          <i
+            v-show="!showImportSettings"
+            class="icon-chevron-down little-grey-text cursor-pointer"
+            @click="showImportSettings = true"
+          ></i>
+          <i
+            v-show="showImportSettings"
+            class="icon-chevron-up little-grey-text cursor-pointer"
+            @click="showImportSettings = false"
+          ></i>
         </div>
         <div class="sidebar-top-line mt16"></div>
-        <div class="mt32 row">
+        <div v-show="showImportSettings" class="mt32 row">
           <div class="col-md-6">
             <p class="bold-text">Информация которую надо обновить</p>
             <label
@@ -307,6 +321,7 @@ export default {
           text: 'Раз в день',
         },
       ],
+      showImportSettings: false,
     }
   },
   computed: {

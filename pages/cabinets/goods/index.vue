@@ -55,8 +55,12 @@
     </template>
 
     <template v-if="switchValue == 'import'">
-      <import-info></import-info>
-      <import-position></import-position>
+      <import-info @uploadFile="showImportPosition = true"></import-info>
+      <import-report v-if="!showImportPosition"></import-report>
+      <import-position
+        v-if="showImportPosition"
+        @deleteFile="showImportPosition = false"
+      ></import-position>
     </template>
   </div>
 </template>
@@ -112,6 +116,7 @@ export default {
           }
         }),
       },
+      showImportPosition: false,
     }
   },
   computed: {

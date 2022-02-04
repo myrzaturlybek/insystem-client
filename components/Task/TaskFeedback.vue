@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="mt32">
+    <div v-if="showButtons" class="mt32">
       <div v-if="selected" class="d-flex">
         <button
           class="btn br10 bg-black text-white feedback-button border-none"
@@ -87,6 +87,10 @@
 export default {
   props: {
     selected: Boolean,
+    showButtons: {
+      type: Boolean,
+      default: true,
+    },
   },
 }
 </script>
