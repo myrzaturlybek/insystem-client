@@ -15830,6 +15830,7 @@ ul.st_navigation li {
   height: -moz-max-content;
   height: max-content;
   transition: top 0.2s ease-out 0s;
+  overflow: hidden;
 }
 
 .history_search {
@@ -42476,6 +42477,11 @@ a h1:hover {
   height: 24px;
 }
 
+.icon22 {
+  width: 22px;
+  height: 22px;
+}
+
 .icon16 {
   height: 16px;
   width: 16px;
@@ -43355,13 +43361,17 @@ input.apple-switch:after {
 }
 
 .sidebar-top {
-  padding: 16px 16px 0 16px;
+  padding: 8px 16px;
   display: flex;
   justify-content: space-between;
 }
 
+.sidebar-top:first-child {
+  margin-top: 8px;
+}
+
 .sidebar-top-last {
-  padding-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .sidebar-top-line {
@@ -43383,27 +43393,14 @@ input.apple-switch:after {
 }
 
 .sidebar-user-status {
-  padding: 2px 4px;
+  padding: 3px 4px;
   display: inline-flex;
   border-radius: 5px;
   color: white;
   background: #bbbbbc;
-  font-weight: 600;
-  font-size: 11px;
-  margin-top: 6px;
-}
-
-.sibebar-user-check {
-  display: none;
-}
-
-.user2,
-.user3 {
-  display: none;
-}
-
-.sidebar-add-account-cont {
-  display: none !important;
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
 }
 
 .sidebar-user-img-cont {
@@ -43450,7 +43447,7 @@ input.apple-switch:after {
   border: 1px solid #ebebeb;
   height: 32px;
   border-radius: 10px;
-  margin: 0 16px 16px 16px;
+  margin: 8px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43458,6 +43455,11 @@ input.apple-switch:after {
 
 .sidebar-add-account {
   display: flex;
+  align-items: center;
+}
+
+.sidebar-users {
+  padding-bottom: 8px;
 }
 
 .sidebar-add-account div {
@@ -43480,11 +43482,7 @@ input.apple-switch:after {
 }
 
 .sidebar-item-outer:hover {
-  background: #333333;
-  color: #ffffff;
-}
-.sidebar-item-outer:hover .sidebar-item {
-  border: none;
+  background: #ebebeb;
 }
 .sidebar-item-outer:hover .icon24 {
   color: #fff;
@@ -46515,4 +46513,10 @@ input.apple-switch:checked:after {
   height: 100%;
   border-radius: 10px;
   border: none;
+}
+
+img[src*="kazakhstan 1.svg"] {
+  width: 24px;
+  height: 16px;
+  border-radius: 5px;
 }

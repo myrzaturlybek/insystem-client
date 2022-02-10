@@ -59,9 +59,9 @@
             </div>
           </div>
           <div>
-            <div class="mb8">
+            <div class="mb8 d-flex justify-content-end">
+              <p class="sidebar-user-status">поставщик</p>
               <img src="/verified.svg" alt="" class="ml16 icon16" />
-              <img src="/supplier.svg" alt="" class="ml16 icon16" />
               <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
             </div>
             <div class="rating-percent">Электроника</div>

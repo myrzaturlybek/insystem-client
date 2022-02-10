@@ -1,18 +1,11 @@
 <template>
   <nuxt-link :to="url">
-    <div
-      class="sidebar-item-outer"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-    >
+    <div class="sidebar-item-outer">
       <div class="sidebar-item">
         <div>
-          <img v-show="!hover" class="icon24" :src="`/${icon}.svg`" />
-          <img
-            v-show="hover"
-            class="icon24"
-            :src="`/${icon}-white.svg`"
-          />
+          <!-- <img v-show="!hover" class="icon24" :src="`/${icon}.svg`" />
+          <img v-show="hover" class="icon24" :src="`/${icon}-white.svg`" /> -->
+          <i :class="[`icon-${icon}`]"></i>
         </div>
         <p class="accordeon-text">{{ title }}</p>
       </div>
@@ -38,9 +31,22 @@ export default {
     },
   },
   data() {
-    return {
-      hover: false,
-    }
+    return {}
   },
 }
 </script>
+
+<style scoped>
+a.nuxt-link-exact-active .sidebar-item-outer {
+  background: #333;
+  color: #fff;
+}
+
+a.nuxt-link-exact-active .sidebar-item {
+  border: none;
+}
+
+.sidebar-item i {
+  font-size: 24px;
+}
+</style>
