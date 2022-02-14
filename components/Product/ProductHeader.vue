@@ -95,7 +95,7 @@
           }
         "
       ></product-tabs>
-      <div>
+      <div v-if="partnerButtons">
         <button class="btn bg-black br10 text-white px-5 bold-text mr16">
           Запрос отправлен
         </button>
@@ -212,6 +212,10 @@ export default {
       default: null,
     },
     showReplenish: {
+      type: Boolean,
+      default: false,
+    },
+    partnerButtons: {
       type: Boolean,
       default: false,
     },

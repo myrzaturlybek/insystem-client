@@ -10,6 +10,7 @@
       show-middle-line
       :tabs-items="tabsItems"
       :tab-value="tabValue"
+      partner-buttons
       @tabSwitch="tabSwitch"
     ></product-header>
     <client-card title="Карточка партнёра"></client-card>

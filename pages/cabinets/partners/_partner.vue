@@ -34,9 +34,9 @@
 
     <template v-if="tabValue == 'circulations'">
       <product-list-filter
-      title="Мои заказы"
-      top-filter
-      stats
+        title="Мои заказы"
+        top-filter
+        stats
       ></product-list-filter>
       <product-list></product-list>
     </template>
@@ -48,7 +48,7 @@ export default {
   layout: 'cabinet',
   data() {
     return {
-      actions: [{ text: 'Экспорт' }, { text: 'Удалить' }],
+      actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       tabsItems: [
         { text: 'Компания', value: 'company' },
         { text: 'Товары', value: 'goods' },

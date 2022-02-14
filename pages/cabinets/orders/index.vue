@@ -49,8 +49,8 @@
               <div class="good_row">
                 <p class="bold-text">{{ good.name }}</p>
                 <div class="icons">
+                  <p class="sidebar-user-status">поставщик</p>
                   <img src="/verified.svg" />
-                  <img src="/supplier.svg" />
                   <img
                     v-if="!good.showParams"
                     src="/parameters.svg"

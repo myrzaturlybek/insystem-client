@@ -7,6 +7,7 @@
       date-time-text="Дата"
       :date-time="new Date()"
       :show-bottom="false"
+      show-replenish
     ></product-header>
     <choose-tariff></choose-tariff>
     <choose-payment></choose-payment>
