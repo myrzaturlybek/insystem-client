@@ -46,13 +46,11 @@
           </div>
         </div>
         <div class="general-body-item-middle-right">
-          <input
+          <apple-switch
             v-if="checked !== null"
             :checked="checked"
-            class="apple-switch"
-            type="checkbox"
-            @change="$emit('check', $event)"
-          />
+            @switch="$emit('check', $event)"
+          ></apple-switch>
         </div>
       </div>
     </template>

@@ -15,12 +15,11 @@
         <div v-for="access in accesses" :key="access.id" class="col-md-6">
           <div class="d-flex justify-content-between py16">
             <p>{{ access.text }}</p>
-            <input
+            <apple-switch
+              v-if="showSwitch"
               :checked="access.turnedOn"
-              class="apple-switch"
-              type="checkbox"
-              @change="$emit('toggle', $event, access)"
-            />
+              @switch="$emit('toggle', $event)"
+            ></apple-switch>
           </div>
           <div class="sidebar-top-line"></div>
         </div>

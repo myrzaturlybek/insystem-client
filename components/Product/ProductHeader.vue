@@ -73,12 +73,10 @@
     >
       <div class="bold-text">Вкл / Выкл</div>
       <div class="general-body-item-middle-right h16">
-        <input
+        <apple-switch
           :checked="turnedOn"
-          class="apple-switch"
-          type="checkbox"
-          @change="$emit('toggle', $event)"
-        />
+          @switch="$emit('toggle', $event)"
+        ></apple-switch>
       </div>
     </div>
 
