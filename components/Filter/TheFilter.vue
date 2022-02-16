@@ -17,12 +17,10 @@
         </div>
       </div>
       <div v-if="checked !== null" class="d-flex align-items-center">
-        <input
+        <apple-switch
           :checked="checked"
-          class="apple-switch"
-          type="checkbox"
-          @change="$emit('check', $event)"
-        />
+          @switch="$emit('check', $event)"
+        ></apple-switch>
       </div>
     </div>
     <div v-if="showMiddle" class="general-content-header-middle">
@@ -71,6 +69,18 @@
       <div class="general-content-header-search">
         <img class="icon24" src="/searchvs.svg" alt="" />
       </div>
+    </div>
+    <div v-if="showToggleAll">
+      <div class="mt32 d-flex justify-content-between">
+        <div class="bold-text">Вкл / Выкл</div>
+        <div class="general-body-item-middle-right h16">
+          <apple-switch
+            :checked="turnedOnAll"
+            @switch="$emit('toggleAll', $event)"
+          ></apple-switch>
+        </div>
+      </div>
+      <div class="sidebar-top-line mt16"></div>
     </div>
     <slot name="footer"></slot>
   </div>
@@ -128,6 +138,8 @@ export default {
       type: Boolean,
       default: null,
     },
+    showToggleAll: Boolean,
+    turnedOnAll: Boolean,
   },
 }
 </script>

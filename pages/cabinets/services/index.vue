@@ -5,7 +5,9 @@
       :actions="actions"
       :show-middle="false"
       :filters="filters"
+      show-toggle-all
       @action="action"
+      @toggleAll="toggleAll"
     >
       <template v-if="showCheckbox" #footer>
         <pick-all
@@ -75,7 +77,7 @@ export default {
           title: 'Услуга ID 0000001',
           dateTime: new Date(),
           status: 'free',
-          checked: true,
+          checked: false,
           price: (1000000).toLocaleString('ru') + 'тг',
           img: '/-_Featured_Image 1.svg',
           description: 'Строительство домов, коттеджей под ключ',
@@ -116,6 +118,11 @@ export default {
     },
     pickService(event, service) {
       service.picked = event.target.checked
+    },
+    toggleAll(event) {
+      this.services.forEach((service) => {
+        service.checked = event.target.checked
+      })
     },
   },
 }

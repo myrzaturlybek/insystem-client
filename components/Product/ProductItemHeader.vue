@@ -28,13 +28,11 @@
       <p v-if="rightText" class="bold-text">
         {{ rightText }}
       </p>
-      <input
+      <apple-switch
         v-if="showSwitch"
-        class="apple-switch"
-        type="checkbox"
         :checked="switchOn"
-        @change="$emit('switch', $event)"
-      />
+        @switch="$emit('switch', $event)"
+      ></apple-switch>
     </div>
   </div>
 </template>

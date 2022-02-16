@@ -43084,33 +43084,6 @@ a h1:hover {
   border-radius: 50%;
 }
 
-input.apple-switch {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  width: 40px;
-  height: 20px;
-  background-color: #ffffff;
-  border: 1px solid #d9dadc;
-  border-radius: 50px;
-  box-shadow: inset -20px 0 0 0 #ffffff;
-  transition-duration: 200ms;
-}
-
-input.apple-switch:after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 16px;
-  height: 16px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
 .ml6 {
   margin-left: 6px !important;
 }
@@ -43679,32 +43652,29 @@ input.apple-switch {
   outline: none;
   width: 40px;
   height: 20px;
-  border: 1px solid #d9dadc;
-  border-radius: 50px;
-  box-shadow: inset -20px 0 0 0 #bbbbbc;
-  transition-duration: 200ms;
+  background-color: #bbbbbc;
+  border-radius: 10px;
+
 }
 
 input.apple-switch:after {
   content: '';
   position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
   top: 1px;
   left: 1px;
-  width: 16px;
-  height: 16px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition-duration: 200ms;
 }
 
 input.apple-switch:checked {
-  border-color: #4ed164;
-  box-shadow: inset 20px 0 0 0 #4ed164;
+  background-color: #33CC00;
 }
 
 input.apple-switch:checked:after {
-  left: 20px;
-  box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+  left: 21px;
 }
 
 .showcase-body-item-img-info {

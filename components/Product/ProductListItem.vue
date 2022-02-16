@@ -27,7 +27,7 @@
         </div>
       </div>
       <div>
-        <input class="apple-switch" type="checkbox" />
+        <apple-switch></apple-switch>
       </div>
     </div>
   </div>
