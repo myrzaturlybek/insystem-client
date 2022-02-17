@@ -42780,6 +42780,7 @@ a h1:hover {
 .general-content-header-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 10px;
   border: 1px solid #ebebeb;
   padding: 4px 12px;
@@ -43363,6 +43364,8 @@ input.apple-switch:after {
 
 .sidebar {
   align-self: start;
+  position: sticky;
+  top: 48px;
 }
 
 .sidebar-top {
