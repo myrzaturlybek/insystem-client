@@ -5,6 +5,12 @@
       :filters="['Категория', 'Бренд', 'Цена', 'Дата', 'Статус']"
       :show-middle="false"
       :actions="actions"
+      show-toggle-all
+      @toggleAll="
+        (event) => {
+          toggleAll(event, showcases)
+        }
+      "
       @action="action"
     >
       <template v-if="showCheckbox" #footer>
@@ -51,8 +57,11 @@
 </template>
 
 <script>
+import cabinetMainPages from '~/mixins/cabinet-main-pages'
+
 export default {
   name: 'ShowcasesIndex',
+  mixins: [cabinetMainPages],
   layout: 'cabinet',
   data() {
     return {

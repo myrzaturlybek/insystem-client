@@ -7,6 +7,12 @@
       :switch-items="switchItems"
       :switch-value="switchValue"
       :actions="actionsFiltered"
+      show-toggle-all
+      @toggleAll="
+        (event) => {
+          toggleAll(event, goods.positions)
+        }
+      "
       @switch="switchCategory"
       @action="action"
     >
@@ -66,8 +72,11 @@
 </template>
 
 <script>
+import cabinetMainPages from '~/mixins/cabinet-main-pages'
+
 export default {
   name: 'GoodsIndex',
+  mixins: [cabinetMainPages],
   layout: 'cabinet',
   data() {
     return {

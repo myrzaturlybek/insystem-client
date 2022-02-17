@@ -20,7 +20,7 @@
         </div>
       </div>
       <template v-if="users">
-        <div class="sidebar-top user2">
+        <div class="sidebar-top user2" @click="users = false">
           <div class="sidebar-top-left">
             <div class="sidebar-user-img-cont">
               <div class="sidebar-user-img-redpoint"></div>
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="sidebar-top user3">
+        <div class="sidebar-top user3" @click="users = false">
           <div class="sidebar-top-left">
             <div class="sidebar-user-img-cont">
               <div class="sidebar-user-img-redpoint"></div>

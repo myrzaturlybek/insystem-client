@@ -7,7 +7,11 @@
       :filters="filters"
       show-toggle-all
       @action="action"
-      @toggleAll="toggleAll"
+      @toggleAll="
+        (event) => {
+          toggleAll(event, services)
+        }
+      "
     >
       <template v-if="showCheckbox" #footer>
         <pick-all
@@ -52,8 +56,11 @@
 </template>
 
 <script>
+import cabinetMainPages from '../../../mixins/cabinet-main-pages'
+
 export default {
   name: 'ServicesIndex',
+  mixins: [cabinetMainPages],
   layout: 'cabinet',
   data() {
     return {
@@ -118,11 +125,6 @@ export default {
     },
     pickService(event, service) {
       service.picked = event.target.checked
-    },
-    toggleAll(event) {
-      this.services.forEach((service) => {
-        service.checked = event.target.checked
-      })
     },
   },
 }

@@ -43347,6 +43347,10 @@ a h1:hover {
   justify-content: space-between;
 }
 
+.sidebar-top:hover {
+  background-color: #ebebeb;
+}
+
 .sidebar-top:first-child {
   margin-top: 8px;
 }

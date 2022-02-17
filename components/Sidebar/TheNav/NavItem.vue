@@ -37,12 +37,12 @@ export default {
 </script>
 
 <style scoped>
-a.nuxt-link-exact-active .sidebar-item-outer {
+a.nuxt-link-active .sidebar-item-outer {
   background: #333;
   color: #fff;
 }
 
-a.nuxt-link-exact-active .sidebar-item {
+a.nuxt-link-active .sidebar-item {
   border: none;
 }
 

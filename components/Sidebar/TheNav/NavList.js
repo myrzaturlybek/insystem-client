@@ -2,7 +2,7 @@
 // название должно быть в формате icon-white.svg
 
 export default [
-  { title: "Главная", icon: "home", url: '/cabinets' },
+  { title: "Главная", icon: "home", url: '/cabinets/welcome' },
   { title: "Компания", icon: "alert-circle", url: "/cabinets/company" },
   { title: "Услуги", icon: "truck", url: "/cabinets/services" },
   { title: "Работы", icon: "image", url: "/cabinets/works" },

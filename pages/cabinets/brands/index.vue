@@ -5,6 +5,12 @@
       :filters="filters"
       :show-middle="false"
       :actions="actions"
+      show-toggle-all
+      @toggleAll="
+        (event) => {
+          toggleAll(event, brands)
+        }
+      "
       @action="action"
     >
       <template v-if="showCheckbox" #footer>
@@ -44,8 +50,11 @@
 </template>
 
 <script>
+import cabinetMainPages from '~/mixins/cabinet-main-pages'
+
 export default {
   name: 'BrandsIndex',
+  mixins: [cabinetMainPages],
   layout: 'cabinet',
   data() {
     return {
