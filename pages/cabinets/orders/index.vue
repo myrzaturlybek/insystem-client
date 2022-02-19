@@ -43,47 +43,29 @@
         ></product-item-header>
       </template>
       <template #body>
-        <div class="order-body">
-          <div class="goods">
-            <div v-for="good in order.goods" :key="good.id" class="good">
-              <div class="good_row">
-                <p class="bold-text">{{ good.name }}</p>
-                <div class="icons">
-                  <p class="sidebar-user-status">поставщик</p>
-                  <img src="/verified.svg" />
-                  <img
-                    v-if="!good.showParams"
-                    src="/parameters.svg"
-                    @click="toggleParams(good)"
-                  />
-                  <img
-                    v-if="good.showParams"
-                    src="/cross.svg"
-                    @click="toggleParams(good)"
-                  />
-                  <div v-if="good.showParams" class="dropdown white-container">
-                    <li
-                      v-for="param in params"
-                      :key="param.id"
-                      class="dropdown-items"
-                    >
-                      {{ param.name }}
-                    </li>
-                  </div>
-                </div>
-              </div>
-              <div class="good_row">
-                <p>Всего товаров: {{ good.count }}</p>
-                <p>{{ good.price.toLocaleString('ru') }} тг</p>
-              </div>
-            </div>
+        <div class="mr16 ml16">
+          <div v-for="good in order.goods" :key="good.id" class="mt16">
+            <item-in-order
+              :img-url="good.imgUrl"
+              :price="good.price"
+              :currency="good.currency"
+              :number="good.number"
+              :unit="good.unit"
+              :supplier="good.supplier"
+            ></item-in-order>
+            <div class="sidebar-top-line mt16"></div>
           </div>
         </div>
       </template>
       <template #footer>
         <div class="order-footer">
-          <p class="bold-text">Итого к оплате</p>
-          <p class="bold-text">{{ order.total.toLocaleString('ru') }} тг</p>
+          <p>Всего товаров: <span class="bold-text">2</span></p>
+          <p style="margin-right: 230px">
+            Общая сумма:
+            <span class="bold-text"
+              >{{ order.total.toLocaleString('ru') }} тг</span
+            >
+          </p>
         </div>
       </template>
     </the-card>
@@ -167,16 +149,24 @@ export default {
             statusEditable: false,
             goods: [
               {
-                name: 'Mobilka Electronic',
-                count: 2,
+                imgUrl: '/iphone-11.jpg',
+                supplier: 'Mobilka Electronic',
+                description:
+                  'Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)',
+                number: 1,
+                unit: 'шт',
                 price: 616980,
-                showParams: false,
+                currency: 'тг',
               },
               {
-                name: 'Mobilka Electronic',
-                count: 2,
+                imgUrl: '/iphone-11.jpg',
+                supplier: 'Mobilka Electronic',
+                description:
+                  'Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)',
+                number: 1,
+                unit: 'шт',
                 price: 616980,
-                showParams: false,
+                currency: 'тг',
               },
             ],
             total: 1143762,
