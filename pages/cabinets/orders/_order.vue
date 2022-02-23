@@ -9,10 +9,18 @@
       :status="status"
       :actions="actions"
       :show-bottom="false"
+      show-bottom-line
+      :bottom-right-text="false"
+      :bottom-text="'Моя скидка: 5%'"
       :middle-status-editable="false"
       @changeStatus="changeStatus"
       @toggle="toggle"
     ></product-header>
+    <order-processing></order-processing>
+    <order-processing-form></order-processing-form>
+    <order-feedback></order-feedback>
+    <order-feedback-form></order-feedback-form>
+    <order-processing :show-middle="false"></order-processing>
     <in-order></in-order>
     <way-to title="Способ получения" :ways="waysToGet"></way-to>
     <product-location title="Адрес доставки"></product-location>

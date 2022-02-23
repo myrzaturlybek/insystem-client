@@ -11219,6 +11219,7 @@ a.text-dark:focus {
   position: relative;
   touch-action: manipulation;
   -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
   /* fix firefox animation glitch */
 }
 
@@ -11236,15 +11237,18 @@ a.text-dark:focus {
   overflow: hidden;
   /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
 }
 
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .owl-carousel .owl-item {
@@ -11252,6 +11256,7 @@ a.text-dark:focus {
   min-height: 1px;
   float: left;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -11407,6 +11412,7 @@ a.text-dark:focus {
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform 100ms ease;
 }
 
@@ -11492,6 +11498,7 @@ a.text-dark:focus {
   background: #d6d6d6;
   display: block;
   -webkit-backface-visibility: visible;
+  backface-visibility: visible;
   transition: opacity 200ms ease;
   border-radius: 30px;
 }
@@ -12311,9 +12318,18 @@ a.text-dark:focus {
   .switch-light,
   .switch-toggle {
     -webkit-animation: webkitSiblingBugfix infinite 1s;
+    animation: webkitSiblingBugfix infinite 1s;
   }
 }
 @-webkit-keyframes webkitSiblingBugfix {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes webkitSiblingBugfix {
   from {
     -webkit-transform: translate3d(0, 0, 0);
   }
@@ -12731,6 +12747,7 @@ button.swiper-pagination-bullet {
   border-radius: 10px;
   position: relative;
   -ms-touch-action: none;
+  touch-action: none;
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -12949,6 +12966,7 @@ button.swiper-pagination-bullet {
 .swiper-container-coverflow .swiper-wrapper {
   /* Windows 8 IE 10 fix */
   -ms-perspective: 1200px;
+  perspective: 1200px;
 }
 
 body {
@@ -13494,6 +13512,16 @@ header .header-categories_link ul {
   }
 }
 @-webkit-keyframes ac-gn-searchresults-show {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ac-gn-searchresults-show {
   0% {
     opacity: 0;
     -webkit-animation-timing-function: ease;
@@ -37032,7 +37060,7 @@ footer .main .footer-row .col-footer .content .lists .title {
   overflow: hidden;
 }
 .task_creating-goods-card-wrap .task_creating-goods-card .img img {
-  webkit-transition: -webkit-transform 0.15s ease-in-out;
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out;
 }
 .task_creating-goods-card-wrap .task_creating-goods-card .title:hover {
@@ -43338,7 +43366,7 @@ a h1:hover {
 .sidebar {
   align-self: start;
   position: sticky;
-  top: 48px;
+  top: 68px;
 }
 
 .sidebar-top {

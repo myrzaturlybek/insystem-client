@@ -56,7 +56,7 @@
       v-if="bottomText"
       class="m16-0 general-body-item-middle border-none p0"
     >
-      <p class="bold-text">Скидка клиенту: 0</p>
+      <p class="bold-text">{{ bottomText }}</p>
       <div v-if="bottomRightText" class="d-flex">
         <p>Процент</p>
         <p class="ml16">%</p>

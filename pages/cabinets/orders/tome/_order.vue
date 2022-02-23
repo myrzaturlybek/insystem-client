@@ -15,6 +15,8 @@
       :middle-status-editable="true"
       @changeStatus="changeStatus"
     ></product-header>
+    <order-feedback></order-feedback>
+    <order-to-me-processing></order-to-me-processing>
     <comments-for-order @addComment="addComment"></comments-for-order>
     <template v-if="!showComments">
       <client-card></client-card>
