@@ -62,6 +62,14 @@
               </div>
             </div>
           </div>
+          <div class="mt16 ml16 mr16">
+            <p class="bold-text">Описание</p>
+            <p class="mt16">
+              Нужен поставщик который сможет предоставить все товары указанные в
+              задании
+            </p>
+            <div class="sidebar-top-line mt16"></div>
+          </div>
         </div>
       </template>
       <template #footer>

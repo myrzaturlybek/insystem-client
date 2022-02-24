@@ -11,6 +11,10 @@
       :show-bottom="false"
       :middle-status-editable="false"
     ></product-header>
+    <order-processing title="Обработка задания"></order-processing>
+    <order-processing-form title="Обработка задания"></order-processing-form>
+    <order-feedback title="Отзыв о задании" is-task></order-feedback>
+    <order-feedback-form title="Отзыв о задании" is-task></order-feedback-form>
     <task-feedback selected></task-feedback>
     <task-feedback></task-feedback>
     <product-schedule

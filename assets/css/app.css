@@ -42880,9 +42880,7 @@ a h1:hover {
 
 .order-body {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .goods {

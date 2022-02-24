@@ -52,7 +52,8 @@
     </div>
 
     <div class="mt16">
-      <div class="d-flex">
+      <p class="bold-text">Файл</p>
+      <div class="d-flex mt16">
         <div class="d-flex align-items-center">
           <img src="/paperclip.svg" alt="paperclip" />
         </div>
@@ -61,6 +62,7 @@
           <p class="little-grey-text">DOCX / 25 KB</p>
         </div>
       </div>
+      <div class="mt16 sidebar-top-line"></div>
     </div>
 
     <div v-if="showButtons" class="mt32">

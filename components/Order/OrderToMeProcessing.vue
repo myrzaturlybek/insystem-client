@@ -2,7 +2,7 @@
   <div class="mt-16 white-container">
     <div class="general-content-header-top">
       <div>
-        <h3 class="general-body-item-title">Обработка заказа</h3>
+        <h3 class="general-body-item-title">{{ title }}</h3>
       </div>
     </div>
     <div class="mt32">
@@ -92,6 +92,12 @@
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Обработка заказа',
+    },
+  },
   data() {
     return {
       statuses: [

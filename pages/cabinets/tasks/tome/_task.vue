@@ -11,6 +11,8 @@
       :show-bottom="false"
       :middle-status-editable="false"
     ></product-header>
+    <order-feedback title="Отзыв о задании" is-task></order-feedback>
+    <order-to-me-processing title="Обработка задании"></order-to-me-processing>
     <reply-to-response></reply-to-response>
     <task-feedback :show-buttons="false"></task-feedback>
     <task-creator></task-creator>

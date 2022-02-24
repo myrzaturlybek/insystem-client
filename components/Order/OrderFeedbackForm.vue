@@ -2,7 +2,7 @@
   <div class="mt-16 white-container">
     <div class="general-content-header-top">
       <div>
-        <h3 class="general-body-item-title">Отзыв о заказе</h3>
+        <h3 class="general-body-item-title">{{ title }}</h3>
       </div>
     </div>
     <div class="mt32">
@@ -19,69 +19,95 @@
         </template>
       </item-with-avatar>
       <div class="sidebar-top-line mt16"></div>
-      <div class="mt16">
-        <item-with-avatar img-url="/order-photo.png">
-          <template #leftColumn>
-            <div>
-              <p>Заказ № 00000001</p>
-            </div>
-            <div>
-              <img src="/rating-inactive.svg" alt="rating-inactive" />
-            </div>
-          </template>
-          <template #rightColumn>
-            <div></div>
-            <p class="little-grey-text">Не выбрано</p>
-          </template>
-        </item-with-avatar>
-        <div class="sidebar-top-line mt16"></div>
-        <div class="mt16 d-flex">
-          <i class="icon-plus little-grey-text"></i>
-          <p class="little-grey-text ml16">Добавить коментарий</p>
+      <template v-if="!isTask">
+        <div class="mt16">
+          <item-with-avatar img-url="/order-photo.png">
+            <template #leftColumn>
+              <div>
+                <p>Заказ № 00000001</p>
+              </div>
+              <div>
+                <img src="/rating-inactive.svg" alt="rating-inactive" />
+              </div>
+            </template>
+            <template #rightColumn>
+              <div></div>
+              <p class="little-grey-text">Не выбрано</p>
+            </template>
+          </item-with-avatar>
+          <div class="sidebar-top-line mt16"></div>
+          <div class="mt16 d-flex">
+            <i class="icon-plus little-grey-text"></i>
+            <p class="little-grey-text ml16">Добавить коментарий</p>
+          </div>
         </div>
-      </div>
-      <div class="mt16">
-        <item-with-avatar class="mt16" img-url="/iphone.svg">
-          <template #leftColumn>
-            <div>
-              <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
-            </div>
-            <div>
-              <img src="/rating-inactive.svg" alt="" />
-            </div>
-          </template>
-          <template #rightColumn>
-            <div></div>
-            <p class="little-grey-text">Не выбрано</p>
-          </template>
-        </item-with-avatar>
-        <div class="sidebar-top-line mt16"></div>
-        <div class="mt16 d-flex">
-          <i class="icon-plus little-grey-text"></i>
-          <p class="little-grey-text ml16">Добавить коментарий</p>
+        <div class="mt16">
+          <item-with-avatar class="mt16" img-url="/iphone.svg">
+            <template #leftColumn>
+              <div>
+                <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+              </div>
+              <div>
+                <img src="/rating-inactive.svg" alt="" />
+              </div>
+            </template>
+            <template #rightColumn>
+              <div></div>
+              <p class="little-grey-text">Не выбрано</p>
+            </template>
+          </item-with-avatar>
+          <div class="sidebar-top-line mt16"></div>
+          <div class="mt16 d-flex">
+            <i class="icon-plus little-grey-text"></i>
+            <p class="little-grey-text ml16">Добавить коментарий</p>
+          </div>
         </div>
-      </div>
-      <div class="mt16">
-        <item-with-avatar class="mt16" img-url="/iphone.svg">
-          <template #leftColumn>
-            <div>
-              <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
-            </div>
-            <div>
-              <img src="/rating-inactive.svg" alt="" />
-            </div>
-          </template>
-          <template #rightColumn>
-            <div></div>
-            <p class="little-grey-text">Не выбрано</p>
-          </template>
-        </item-with-avatar>
-        <div class="sidebar-top-line mt16"></div>
-        <div class="mt16 d-flex">
-          <i class="icon-plus little-grey-text"></i>
-          <p class="little-grey-text ml16">Добавить коментарий</p>
+        <div class="mt16">
+          <item-with-avatar class="mt16" img-url="/iphone.svg">
+            <template #leftColumn>
+              <div>
+                <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+              </div>
+              <div>
+                <img src="/rating-inactive.svg" alt="" />
+              </div>
+            </template>
+            <template #rightColumn>
+              <div></div>
+              <p class="little-grey-text">Не выбрано</p>
+            </template>
+          </item-with-avatar>
+          <div class="sidebar-top-line mt16"></div>
+          <div class="mt16 d-flex">
+            <i class="icon-plus little-grey-text"></i>
+            <p class="little-grey-text ml16">Добавить коментарий</p>
+          </div>
         </div>
-      </div>
+      </template>
+
+      <template v-if="isTask">
+        <div class="mt16">
+          <item-with-avatar img-url="/order-photo.png">
+            <template #leftColumn>
+              <div>
+                <p>Задание № 00000001</p>
+              </div>
+              <div>
+                <img src="/rating-inactive.svg" alt="rating-inactive" />
+              </div>
+            </template>
+            <template #rightColumn>
+              <div></div>
+              <p class="little-grey-text">Не выбрано</p>
+            </template>
+          </item-with-avatar>
+          <div class="sidebar-top-line mt16"></div>
+          <div class="mt16 d-flex">
+            <i class="icon-plus little-grey-text"></i>
+            <p class="little-grey-text ml16">Добавить коментарий</p>
+          </div>
+        </div>
+      </template>
 
       <div class="mt32 d-flex">
         <button class="btn green-btn">Опубликовать</button>
@@ -91,6 +117,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'Отзыв о заказе',
+    },
+    isTask: Boolean,
+  },
+}
+</script>
 
 <style scoped>
 .goods-photo {
