@@ -27,9 +27,9 @@
           :date-time="partner.dateTime"
           :checked="partner.picked"
           :show-checkbox="showCheckbox"
-          :right-text="partner.sale ? `Скидка: ${partner.sale} %` : null"
-          :status="partner.status || null"
-          :statuses="statuses[switchValue] || []"
+          :right-text="!showFooterButtons(partner) ? `Скидка ${partner.sale}%` : null"
+          :status="showFooterButtons(partner) ? partner.status : null"
+          :statuses="showFooterButtons(partner) ? statuses[switchValue] : []"
           @check="
             (event) => {
               partnerCheck(event, partner)
@@ -76,7 +76,10 @@
         </div>
       </template>
       <template #footer>
-        <div v-if="switchValue == 'current'" class="general-body-item-bottom">
+        <div
+          v-if="!showFooterButtons(partner)"
+          class="general-body-item-bottom"
+        >
           <div class="general-body-item-number-cont">
             <p>Оборот:</p>
             <div>{{ partner.circulation }} тг</div>
@@ -90,7 +93,7 @@
             <div>{{ partner.averageCheck }} тг</div>
           </div>
         </div>
-        <div v-if="switchValue == 'requests'" class="partner-footer">
+        <div v-if="showFooterButtons(partner)" class="partner-footer">
           <div
             class="actions"
             v-html="
@@ -112,8 +115,8 @@ export default {
     return {
       filters: ['Статус', 'Партнёр', 'Цена', 'Дата'],
       switchItems: [
-        { text: 'Текущие', value: 'current' },
-        { text: 'Запросы', value: 'requests' },
+        { text: 'Мои партнёры', value: 'current' },
+        { text: 'Я партнёр', value: 'requests' },
       ],
       switchValue: 'current',
       actions: [
@@ -156,10 +159,38 @@ export default {
             footerTemplate: `<div class="partner-footer_button repeat">Повторить</div>`,
           },
         ],
+        current: [
+          {
+            text: 'Запрос отправлен',
+            color: '#BBBBBC',
+            value: 'sendRequest',
+            footerTemplate: `<div class="partner-footer_button cancel">Отменить</div>`,
+          },
+          {
+            text: 'В ожидании',
+            color: '#FF9900',
+            value: 'waiting',
+            footerTemplate: `<div class="partner-footer_button confirm">Потвердить</div>
+              <div class="partner-footer_button deny">Отказать</div>`,
+          },
+          {
+            text: 'Подтверждён',
+            color: '#33B601',
+            value: 'confirmed',
+            footerTemplate: `<div class="partner-footer_button cancel">Удалить</div>`,
+          },
+          {
+            text: 'Отказано',
+            color: '#D80808',
+            value: 'denied',
+            footerTemplate: `<div class="partner-footer_button repeat">Повторить</div>`,
+          },
+        ],
       },
       partners: {
         current: new Array(7).fill().map((e, i) => {
           return {
+            type: 'current',
             url: `partners/${i}`,
             title: 'Партнёр ID 00000001',
             dateTime: new Date(),
@@ -173,10 +204,12 @@ export default {
             partners: (22345).toLocaleString('ru'),
             averageCheck: (4856).toLocaleString('ru'),
             sale: 25,
+            status: 'sendRequest',
           }
         }),
         requests: new Array(7).fill().map((e, i) => {
           return {
+            type: 'request',
             url: `partners/requests/${i}`,
             title: 'Партнёр ID 00000001',
             dateTime: new Date(),
@@ -193,6 +226,16 @@ export default {
     }
   },
   methods: {
+    showFooterButtons(partner) {
+      if (
+        partner.status === 'sendRequest' ||
+        partner.status === 'waiting' ||
+        partner.status === 'denied'
+      ) {
+        return true
+      }
+      return false
+    },
     switchCategory(value) {
       if (this.switchValue !== value) {
         this.switchValue = value
