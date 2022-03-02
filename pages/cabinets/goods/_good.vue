@@ -5,35 +5,72 @@
       :date-time="new Date()"
       :turned-on="true"
       status-on-middle
-      show-bottom-line
+      turned-on-line
       :statuses="statuses"
       :status="status"
       :actions="actions"
+      :tabs-items="tabsItems"
+      :tab-value="tabValue"
+      @tabSwitch="tabSwitch"
       @changeStatus="changeStatus"
       @toggle="toggle"
     ></product-header>
-    <product-selected-categories
-      :categories="categories"
-    ></product-selected-categories>
-    <product-photos title="Фотографии товара" :photos="photos"></product-photos>
-    <product-info
-      title="Информация о товаре"
-      :name="goodName"
-      :description="goodDescription"
-      :notes="goodNotes"
-    ></product-info>
-    <product-price></product-price>
-    <product-specs></product-specs>
-    <product-list-filter></product-list-filter>
-    <product-list></product-list>
+    <template v-if="tabValue == 'info'">
+      <product-selected-categories
+        :categories="categories"
+      ></product-selected-categories>
+      <product-photos
+        title="Фотографии товара"
+        :photos="photos"
+      ></product-photos>
+      <product-info
+        title="Информация о товаре"
+        :name="goodName"
+        :description="goodDescription"
+        :notes="goodNotes"
+      ></product-info>
+      <product-price></product-price>
+      <product-specs></product-specs>
+    </template>
+
+    <template v-if="tabValue == 'orders'">
+      <product-list-filter
+        title="Список заказов"
+        top-filter
+        stats
+      ></product-list-filter>
+      <product-list></product-list>
+    </template>
+
+    <template v-if="tabValue == 'reviews'">
+      <reviews-stats title="Рейтинг товара"></reviews-stats>
+      <the-filter
+        title="Отзывы о товаре"
+        :filters="reviewsFilters"
+        :show-middle="false"
+        class="mt16"
+      ></the-filter>
+      <review-item></review-item>
+      <review-item show-comments></review-item>
+    </template>
   </div>
 </template>
 
 <script>
+import cabinetDetailPages from '~/mixins/cabinet-detail-pages'
+
 export default {
+  mixins: [cabinetDetailPages],
   layout: 'cabinet',
   data() {
     return {
+      reviewsFilters: ['Категория', 'Бренд', 'Цена', 'Дата', 'Статус'],
+      tabsItems: [
+        { text: 'Информация', value: 'info' },
+        { text: 'Заказы', value: 'orders' },
+        { text: 'Отзывы', value: 'reviews' },
+      ],
+      tabValue: 'info',
       actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       statuses: [
         { text: 'В наличии', color: '#33B601', value: 'inStock' },

@@ -79,6 +79,7 @@
         ></apple-switch>
       </div>
     </div>
+    <div v-if="turnedOnLine" class="sidebar-top-line mt16"></div>
 
     <div
       v-if="tabsItems.length > 0"
@@ -217,6 +218,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    turnedOnLine: Boolean,
   },
   computed: {
     dateTimeFormat() {

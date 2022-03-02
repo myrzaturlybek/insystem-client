@@ -2,50 +2,93 @@
   <div>
     <product-header
       title="Головная ID 0000001"
+      :date-time="new Date()"
+      date-time-text="Создана"
+      :turned-on="true"
+      turned-on-line
       :actions="actions"
-      :show-bottom="false"
       :verified="false"
       show-verified
+      :tabs-items="tabsItems"
+      :tab-value="tabValue"
+      @tabSwitch="tabSwitch"
     ></product-header>
-    <product-selected-categories
-      :categories="categories"
-    ></product-selected-categories>
-    <product-schedule
-      title="Данные для входа"
-      :info="loginDetails"
-    ></product-schedule>
-    <add-info title="Контактное лицо" :info="personInfo" have-avatar></add-info>
-    <add-info
-      title="Информация о компании"
-      :info="companyInfo"
-      have-photo
-    ></add-info>
-    <add-info title="Регистрационные данные" :info="regInfo"></add-info>
-    <product-add-photos title="Фотографии документов"></product-add-photos>
-    <add-info title="График работы" :info="schedule"></add-info>
-    <select-category
-      title="Способ оплаты"
-      :categories="paymentMethods"
-      @selectCategory="selectPaymentMethod"
-    ></select-category>
-    <select-category
-      title="Способ получения"
-      :categories="getMethods"
-      @selectCategory="selectGetMethod"
-    ></select-category>
-    <add-location
-      title="Местоположение склада"
-      address-label="Склад 1"
-      add-button
-    ></add-location>
+    <template v-if="tabValue == 'info'">
+      <product-selected-categories
+        :categories="categories"
+      ></product-selected-categories>
+      <product-schedule
+        title="Данные для входа"
+        :info="loginDetails"
+      ></product-schedule>
+      <add-info
+        title="Контактное лицо"
+        :info="personInfo"
+        have-avatar
+      ></add-info>
+      <add-info
+        title="Информация о компании"
+        :info="companyInfo"
+        have-photo
+      ></add-info>
+      <add-info title="Регистрационные данные" :info="regInfo"></add-info>
+      <product-add-photos title="Фотографии документов"></product-add-photos>
+      <add-info title="График работы" :info="schedule"></add-info>
+      <select-category
+        title="Способ оплаты"
+        :categories="paymentMethods"
+        @selectCategory="selectPaymentMethod"
+      ></select-category>
+      <select-category
+        title="Способ получения"
+        :categories="getMethods"
+        @selectCategory="selectGetMethod"
+      ></select-category>
+      <add-location
+        title="Местоположение склада"
+        address-label="Склад 1"
+        add-button
+      ></add-location>
+    </template>
+
+    <template v-if="tabValue == 'turnovers'">
+      <product-list-filter
+        title="Обороты компании"
+        top-filter
+        stats
+      ></product-list-filter>
+      <product-list></product-list>
+    </template>
+
+    <template v-if="tabValue == 'reviews'">
+      <reviews-stats title="Рейтинг компании"></reviews-stats>
+      <the-filter
+        title="Отзывы о компании"
+        :filters="reviewsFilters"
+        :show-middle="false"
+        class="mt16"
+      ></the-filter>
+      <review-item></review-item>
+      <review-item show-comments></review-item>
+    </template>
   </div>
 </template>
 
 <script>
+import cabinetDetailPages from '~/mixins/cabinet-detail-pages'
+
 export default {
+  mixins: [cabinetDetailPages],
   layout: 'cabinet',
   data() {
     return {
+      reviewsFilters: ['Категория', 'Бренд', 'Цена', 'Дата', 'Статус'],
+      tabsItems: [
+        { text: 'Информация', value: 'info' },
+        { text: 'Обороты', value: 'turnovers' },
+        { text: 'Отзывы', value: 'reviews' },
+      ],
+      tabValue: 'info',
       actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       categories: [
         {

@@ -2,39 +2,65 @@
   <div>
     <product-header
       title="Филиал ID 0000001"
+      :date-time="new Date()"
+      date-time-text="Создана"
+      :turned-on="true"
+      turned-on-line
       :actions="actions"
-      :show-bottom="false"
       :verified="true"
       show-verified
+      :tabs-items="tabsItems"
+      :tab-value="tabValue"
+      @tabSwitch="tabSwitch"
     ></product-header>
-    <product-selected-categories
-      :categories="categories"
-    ></product-selected-categories>
-    <product-schedule
-      title="Данные для входа"
-      :info="loginDetails"
-    ></product-schedule>
-    <add-info title="Контактное лицо" :info="personInfo" have-avatar></add-info>
-    <add-info title="Регистрационные данные" :info="regInfo"></add-info>
-    <product-photos
-      title="Фотографии документов"
-      :photos="docs"
-    ></product-photos>
-    <product-schedule title="График работы" :info="schedule"></product-schedule>
-    <way-to title="Способ оплаты" :ways="paymentMethods"></way-to>
-    <way-to title="Способ получения" :ways="waysToGet"></way-to>
-    <product-location
-      title="Местоположение склада"
-      :locations="locations"
-    ></product-location>
+
+    <template v-if="tabValue == 'info'">
+      <product-selected-categories
+        :categories="categories"
+      ></product-selected-categories>
+      <product-schedule
+        title="Данные для входа"
+        :info="loginDetails"
+      ></product-schedule>
+      <add-info
+        title="Контактное лицо"
+        :info="personInfo"
+        have-avatar
+      ></add-info>
+      <add-info title="Регистрационные данные" :info="regInfo"></add-info>
+      <product-photos
+        title="Фотографии документов"
+        :photos="docs"
+      ></product-photos>
+      <product-schedule
+        title="График работы"
+        :info="schedule"
+      ></product-schedule>
+      <way-to title="Способ оплаты" :ways="paymentMethods"></way-to>
+      <way-to title="Способ получения" :ways="waysToGet"></way-to>
+      <product-location
+        title="Местоположение склада"
+        :locations="locations"
+      ></product-location>
+    </template>
   </div>
 </template>
 
 <script>
+import cabinetDetailPages from '~/mixins/cabinet-detail-pages'
+
 export default {
+  mixins: [cabinetDetailPages],
   layout: 'cabinet',
   data() {
     return {
+      reviewsFilters: ['Категория', 'Бренд', 'Цена', 'Дата', 'Статус'],
+      tabsItems: [
+        { text: 'Информация', value: 'info' },
+        { text: 'Обороты', value: 'turnovers' },
+        { text: 'Отзывы', value: 'reviews' },
+      ],
+      tabValue: 'info',
       actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       categories: [
         {

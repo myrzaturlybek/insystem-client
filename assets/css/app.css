@@ -43364,7 +43364,7 @@ a h1:hover {
 .sidebar {
   align-self: start;
   position: sticky;
-  top: 68px;
+  top: 64px;
 }
 
 .sidebar-top {
@@ -46528,4 +46528,8 @@ img[src*="kazakhstan 1.svg"] {
   width: 24px;
   height: 16px;
   border-radius: 5px;
+}
+
+.rating-text {
+  line-height: 0px;
 }
