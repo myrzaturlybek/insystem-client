@@ -43,8 +43,65 @@
         ></product-item-header>
       </template>
       <template #body>
-        <div class="order-body">
-          <div class="goods">
+        <template v-if="switchValue == 'my'">
+          <div class="order-body">
+            <div class="goods">
+              <div class="good">
+                <div class="good_row">
+                  <p class="bold-text">Категория</p>
+                </div>
+                <div class="good_row">
+                  <p>{{ task.category }}</p>
+                </div>
+              </div>
+              <div class="good">
+                <div class="good_row">
+                  <p class="bold-text">Название</p>
+                </div>
+                <div class="good_row">
+                  <p>{{ task.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt16 ml16 mr16">
+              <p class="bold-text">Описание</p>
+              <p class="mt16">
+                Нужен поставщик который сможет предоставить все товары указанные
+                в задании
+              </p>
+              <div class="sidebar-top-line mt16"></div>
+            </div>
+          </div>
+        </template>
+
+        <template v-if="switchValue == 'toMe'">
+          <div class="mr16 ml16 mt16">
+            <item-with-avatar img-url="/logo.png" circle>
+              <template #leftColumn>
+                <p class="bold-text">Mobilka Electronic</p>
+                <div>
+                  <div class="d-flex align-items-center">
+                    <div class="mr16">
+                      <img src="/kazakhstan 1.svg" alt="" />
+                    </div>
+                    <img class="icon16 mr8" src="/activated.svg" alt="" />
+                    <p class="blue bold-text rating-text">4.9</p>
+                    <p class="little-grey-text rating-text">/ 5</p>
+                  </div>
+                </div>
+              </template>
+              <template #rightColumn>
+                <div class="d-flex">
+                  <p class="sidebar-user-status">поставщик</p>
+                  <img src="/verified.svg" alt="" class="ml16 icon16" />
+                  <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
+                </div>
+                <p class="little-grey-text">Электроника</p>
+              </template>
+            </item-with-avatar>
+            <div class="sidebar-top-line mt16"></div>
+          </div>
+          <div class="goods mt16">
             <div class="good">
               <div class="good_row">
                 <p class="bold-text">Категория</p>
@@ -62,15 +119,7 @@
               </div>
             </div>
           </div>
-          <div class="mt16 ml16 mr16">
-            <p class="bold-text">Описание</p>
-            <p class="mt16">
-              Нужен поставщик который сможет предоставить все товары указанные в
-              задании
-            </p>
-            <div class="sidebar-top-line mt16"></div>
-          </div>
-        </div>
+        </template>
       </template>
       <template #footer>
         <div class="task-footer">

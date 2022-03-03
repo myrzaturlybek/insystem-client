@@ -15862,6 +15862,10 @@ ul.st_navigation li {
   overflow: hidden;
 }
 
+.navigation-menu a:last-child .sidebar-item {
+  border-bottom: none;
+}
+
 .history_search {
   width: 100%;
   background: #ffffff;
@@ -43493,12 +43497,15 @@ a h1:hover {
   width: 100%;
 }
 
-.sidebar-item-outer:hover {
+.navigation-menu a:hover .sidebar-item-outer {
   background: #ebebeb;
 }
+
 .sidebar-item-outer:hover .icon24 {
   color: #fff;
 }
+
+
 
 .sidebar-item {
   height: 56px;

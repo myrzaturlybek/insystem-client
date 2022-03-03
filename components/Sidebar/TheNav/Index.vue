@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navigation-menu">
     <nav-item
       v-for="item in navList"
       :key="item.id"
@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import NavItem from "./NavItem.vue";
-import NavList from "./NavList";
+import NavItem from './NavItem.vue'
+import NavList from './NavList'
 export default {
-  name: "TheNav",
+  name: 'TheNav',
   components: { NavItem },
   data() {
     return {
       navList: NavList,
-    };
+    }
   },
-};
+}
 </script>
