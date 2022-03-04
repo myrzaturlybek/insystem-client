@@ -7,7 +7,7 @@
       :turned-on="true"
       turned-on-line
       :actions="actions"
-      :verified="false"
+      :verified="true"
       show-verified
       :tabs-items="tabsItems"
       :tab-value="tabValue"

@@ -92,12 +92,10 @@
 
       <template #footer>
         <div class="order-footer">
-          <p>Всего товаров: <span class="bold-text">2</span></p>
+          <p><span class="bold-text">Всего товаров: </span>2</p>
           <p style="margin-right: 230px">
-            Общая сумма:
-            <span class="bold-text"
-              >{{ order.total.toLocaleString('ru') }} тг</span
-            >
+            <span class="bold-text">Общая сумма:</span>
+            {{ order.total.toLocaleString('ru') }} тг
           </p>
         </div>
       </template>

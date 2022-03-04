@@ -45,8 +45,8 @@
         </div>
       </template>
       <div class="mt32 d-flex">
-        <button class="btn green-btn">Опубликовать</button>
-        <button class="ml16 btn white-btn">Отменить</button>
+        <button class="btn green-btn">{{ successButtonText }}</button>
+        <button class="ml16 btn white-btn">{{ cancelButtonText }}</button>
       </div>
     </div>
   </div>
@@ -62,6 +62,14 @@ export default {
     title: {
       type: String,
       default: 'Обработка заказа',
+    },
+    successButtonText: {
+      type: String,
+      default: 'Опубликовать',
+    },
+    cancelButtonText: {
+      type: String,
+      default: 'Отменить',
     },
   },
 }

@@ -42,16 +42,13 @@ export default {
       info: {
         mainOffice: {
           title: 'Головная ID 0000001',
-          verified: false,
+          verified: true,
           url: 'company/main-office',
           info: [
             {
               title: 'Название',
               text: 'Revenj',
-            },
-            {
-              title: 'Категория',
-              text: 'Смартфоны и гаджеты',
+              fullSize: true,
             },
             {
               title: 'Страна',

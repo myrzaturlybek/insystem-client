@@ -24,7 +24,7 @@
             <p v-if="!verified" class="little-grey-text mr16">Не проверенный</p>
             <p v-if="verified" class="text-success mr16">Проверенный</p>
             <img v-if="!verified" src="/shield-off.svg" />
-            <i v-if="verified" class="icon-shield text-success"></i>
+            <img v-if="verified" src="/verified.svg" />
           </div>
         </div>
       </div>

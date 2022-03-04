@@ -20,7 +20,11 @@
     <order-processing-form></order-processing-form>
     <order-feedback></order-feedback>
     <order-feedback-form></order-feedback-form>
-    <order-processing :show-middle="false"></order-processing>
+    <order-processing
+      :show-middle="false"
+      success-button-text="Принимаю"
+      cancel-button-text="Не принимаю"
+    ></order-processing>
     <in-order></in-order>
     <way-to title="Способ получения" :ways="waysToGet"></way-to>
     <product-location title="Адрес доставки"></product-location>
