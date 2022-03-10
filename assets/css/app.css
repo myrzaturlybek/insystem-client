@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap);
 .slick-track[data-v-e4caeaf8] {
   position: relative;
   top: 0;
@@ -808,17 +807,6 @@ textarea:focus {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-@font-face {
-  font-family: 'Roboto-Regular';
-  src: url('/fonts/Roboto/Roboto-Regular.ttf');
-  src: url('/fonts/Roboto/Roboto-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-* {
-  font-family: 'Roboto-Regular', sans-serif;
 }
 
 /*!
@@ -42765,7 +42753,11 @@ a h1:hover {
   padding: 0 26px;
   font-size: 14px;
   height: 16px;
-  border-left: 1px solid #bbbbbc;
+  border-right: 1px solid #bbbbbc;
+}
+
+.general-content-header-greyswitch-cont div:last-child p {
+  border: none;
 }
 
 .general-content-header-greyswitch-checked {
@@ -42773,9 +42765,12 @@ a h1:hover {
   border-radius: 8px;
 }
 
+/* .grey-switch-item {
+  border-right: 1px solid #bbbbbc;
+} */
+
 .general-content-header-greyswitch-checked p,
-.general-content-header-greyswitch-first p,
-.general-content-header-greyswitch-afterchecked p {
+.general-content-header-greyswitch-first p {
   border: none !important;
   cursor: pointer;
 }
@@ -43377,8 +43372,16 @@ a h1:hover {
   justify-content: space-between;
 }
 
-.sidebar-top:hover {
-  background-color: #ebebeb;
+.sidebar-top .icon22 {
+  display: none;
+}
+
+.sidebar-top.user1 .icon22 {
+  display: block;
+}
+
+.sidebar-top:hover .icon22 {
+  display: block;
 }
 
 .sidebar-top:first-child {

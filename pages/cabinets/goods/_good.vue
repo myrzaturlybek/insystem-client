@@ -46,6 +46,7 @@
       <reviews-stats title="Рейтинг товара"></reviews-stats>
       <the-filter
         title="Отзывы о товаре"
+        title-size="small"
         :filters="reviewsFilters"
         :show-middle="false"
         class="mt16"

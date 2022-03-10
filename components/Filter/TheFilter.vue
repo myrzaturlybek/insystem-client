@@ -1,7 +1,12 @@
 <template>
   <div class="services-header white-container general-content-header">
     <div class="general-content-header-top">
-      <h2 class="general-content-header-title">{{ title }}</h2>
+      <h2 v-if="titleSize == 'large'" class="general-content-header-title">
+        {{ title }}
+      </h2>
+      <h3 v-if="titleSize == 'small'" class="general-body-item-title">
+        {{ title }}
+      </h3>
       <div
         v-if="actions && actions.length > 0"
         class="general-content-greytexts"
@@ -93,6 +98,10 @@ export default {
     title: {
       type: String,
       default: '',
+    },
+    titleSize: {
+      type: String,
+      default: 'large',
     },
     actions: {
       type: Array,

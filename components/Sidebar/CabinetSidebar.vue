@@ -31,6 +31,7 @@
               <p class="sidebar-user-status mt8">исполнитель</p>
             </div>
           </div>
+          <img class="icon22" src="/circle-check-black.svg" alt="" />
         </div>
         <div class="sidebar-top user3" @click="users = false">
           <div class="sidebar-top-left">
@@ -43,6 +44,7 @@
               <p class="sidebar-user-status mt8">поставщик</p>
             </div>
           </div>
+          <img class="icon22" src="/circle-check-black.svg" alt="" />
         </div>
         <div class="sidebar-add-account-cont">
           <div class="sidebar-add-account">

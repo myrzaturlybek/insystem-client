@@ -64,6 +64,7 @@
       <reviews-stats title="Рейтинг компании"></reviews-stats>
       <the-filter
         title="Отзывы о компании"
+        title-size="small"
         :filters="reviewsFilters"
         :show-middle="false"
         class="mt16"

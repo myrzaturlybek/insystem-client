@@ -1,9 +1,9 @@
 <template>
   <div class="white-container mt16">
     <div v-if="title" class="general-content-header-top">
-      <h2 class="general-content-header-title">
+      <h3 class="general-body-item-title">
         {{ title }}
-      </h2>
+      </h3>
     </div>
     <div class="d-flex justify-content-between mt32">
       <div class="rating-left">

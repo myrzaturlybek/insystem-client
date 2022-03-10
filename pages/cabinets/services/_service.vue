@@ -46,6 +46,7 @@
       <reviews-stats title="Рейтинг услуги"></reviews-stats>
       <the-filter
         title="Отзывы об услуге"
+        title-size="small"
         :filters="reviewsFilters"
         :show-middle="false"
         class="mt16"
