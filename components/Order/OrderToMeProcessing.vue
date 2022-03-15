@@ -9,7 +9,10 @@
       <div>
         <item-with-avatar img-url="/logo.png" circle>
           <template #leftColumn>
-            <p class="bold-text">Иван Иванов</p>
+            <a href="#" class="item-link"
+              ><p class="bold-text">Иван Иванов</p></a
+            >
+
             <p>Менеджер</p>
           </template>
           <template #rightColumn>
@@ -29,7 +32,10 @@
       <div class="mt32">
         <item-with-avatar img-url="/logo.png" circle>
           <template #leftColumn>
-            <p class="bold-text">Вася Васечкин</p>
+            <a href="#" class="item-link">
+              <p class="bold-text">Вася Васечкин</p></a
+            >
+
             <p>Кладовщик</p>
           </template>
           <template #rightColumn>
@@ -49,7 +55,10 @@
       <div class="mt32">
         <item-with-avatar img-url="/logo.png" circle>
           <template #leftColumn>
-            <p class="bold-text">Василиса Васильевна</p>
+            <a href="#" class="item-link">
+              <p class="bold-text">Василиса Васильевна</p>
+            </a>
+
             <p>Бухгалтер</p>
           </template>
           <template #rightColumn>
@@ -69,7 +78,10 @@
       <div class="mt32">
         <item-with-avatar img-url="/logo.png" circle>
           <template #leftColumn>
-            <p class="bold-text">Петр Петров</p>
+            <a href="#" class="item-link">
+              <p class="bold-text">Петр Петров</p>
+            </a>
+
             <p>Водитель</p>
           </template>
           <template #rightColumn>

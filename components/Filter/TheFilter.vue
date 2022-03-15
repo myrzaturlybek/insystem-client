@@ -33,26 +33,16 @@
         <div v-if="activeBefore" class="little-grey-text">
           Активен до {{ activeBefore }}
         </div>
-        <div
+        <product-tabs
           v-if="switchItems && switchItems.length > 0"
-          class="general-content-header-greyswitch-cont"
-        >
-          <div
-            v-for="item in switchItems"
-            :key="item.id"
-            :class="[
-              {
-                'general-content-header-greyswitch-checked':
-                  switchValue == item.value,
-                'general-content-header-greyswitch-afterchecked':
-                  switchValue != item.value,
-              },
-            ]"
-            @click="$emit('switch', item.value)"
-          >
-            <p>{{ item.text }}</p>
-          </div>
-        </div>
+          :tabs-items="switchItems"
+          :value="switchValue"
+          @switch="
+            (value) => {
+              $emit('switch', value)
+            }
+          "
+        ></product-tabs>
       </div>
       <div v-if="subscribers" class="subscriptions-num-cont">
         <div class="bold-text">На вас подписанно: {{ subscribers }}</div>

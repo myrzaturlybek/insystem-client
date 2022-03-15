@@ -64,7 +64,10 @@
           <div class="mr16 ml16 mt16">
             <item-with-avatar img-url="/logo.png" circle>
               <template #leftColumn>
-                <p class="bold-text">Mobilka Electronic</p>
+                <a href="#" class="item-link">
+                  <p class="bold-text">Mobilka Electronic</p>
+                </a>
+
                 <div>
                   <div class="d-flex align-items-center">
                     <div class="mr16">

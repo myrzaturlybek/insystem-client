@@ -8,7 +8,9 @@
     <div class="mt32">
       <item-with-avatar img-url="/logo.png" circle>
         <template #leftColumn>
-          <p class="bold-text">Иван Иванов</p>
+          <a href="#" class="item-link">
+            <p class="bold-text">Иван Иванов</p>
+          </a>
           <p>Менеджер</p>
         </template>
         <template #rightColumn>
@@ -24,7 +26,7 @@
           <item-with-avatar img-url="/order-photo.png">
             <template #leftColumn>
               <div>
-                <p>Заказ № 00000001</p>
+                <a href="#" class="item-link"><p>Заказ № 00000001</p></a>
               </div>
               <div>
                 <img src="/Rating.svg" alt="rating" />
@@ -41,7 +43,9 @@
           <item-with-avatar class="mt16" img-url="/iphone.svg">
             <template #leftColumn>
               <div>
-                <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+                <a href="#" class="item-link">
+                  <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+                </a>
               </div>
               <div>
                 <img src="/Rating.svg" alt="" />
@@ -58,7 +62,9 @@
           <item-with-avatar class="mt16" img-url="/iphone.svg">
             <template #leftColumn>
               <div>
-                <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+                <a href="#" class="item-link">
+                  <p>Смартфон Apple iPhone X 256Gb Space Gray (MQAF2RJBJB)</p>
+                </a>
               </div>
               <div>
                 <img src="/Rating.svg" alt="" />
@@ -87,7 +93,9 @@
           <item-with-avatar img-url="/order-photo.png">
             <template #leftColumn>
               <div>
-                <p>Задание № 00000001</p>
+                <a href="#" class="item-link">
+                  <p>Задание № 00000001</p>
+                </a>
               </div>
               <div>
                 <img src="/Rating.svg" alt="rating" />

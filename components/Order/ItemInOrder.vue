@@ -1,7 +1,11 @@
 <template>
   <item-with-avatar :img-url="imgUrl">
     <template #leftColumn>
-      <p class="bold-text">{{ price.toLocaleString('ru') }} {{ currency }}</p>
+      <a href="#" class="item-link"
+        ><p class="bold-text">
+          {{ price.toLocaleString('ru') }} {{ currency }}
+        </p></a
+      >
       <p>{{ description }}</p>
     </template>
     <template #rightColumn>

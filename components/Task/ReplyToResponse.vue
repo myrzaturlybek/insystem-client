@@ -7,7 +7,10 @@
     </div>
     <item-with-avatar img-url="/logo.png" class="mt32">
       <template #leftColumn>
-        <p class="bold-text">Mobilka Electronic</p>
+        <a href="" class="item-link"
+          ><p class="bold-text">Mobilka Electronic</p></a
+        >
+
         <div class="mt8 df">
           <div class="mr16">
             <img src="/kazakhstan 1.svg" alt="" />

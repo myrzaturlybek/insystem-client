@@ -2,7 +2,10 @@
   <div class="mt16 white-container">
     <item-with-avatar img-url="/logo.png">
       <template #leftColumn>
-        <p class="bold-text">Mobilka Electronic</p>
+        <a href="#" class="item-link">
+          <p class="bold-text">Mobilka Electronic</p>
+        </a>
+
         <div class="d-flex align-items-center">
           <div class="mr16">
             <img src="/kazakhstan 1.svg" alt="" />

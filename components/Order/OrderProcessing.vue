@@ -8,7 +8,9 @@
     <div class="mt32">
       <item-with-avatar img-url="/logo.png" circle>
         <template #leftColumn>
-          <p class="bold-text">Иван Иванов</p>
+          <a href="#" class="item-link">
+            <p class="bold-text">Иван Иванов</p>
+          </a>
           <p>Менеджер</p>
         </template>
         <template #rightColumn>

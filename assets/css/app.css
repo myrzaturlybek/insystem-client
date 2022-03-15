@@ -1,3 +1,7 @@
+* {
+  user-select: none;
+}
+
 .slick-track[data-v-e4caeaf8] {
   position: relative;
   top: 0;
@@ -42741,6 +42745,7 @@ a h1:hover {
   display: inline-flex;
   align-items: center;
   padding: 0 2px;
+  cursor: pointer;
 }
 
 .general-content-header-greyswitch-cont > div {
@@ -46542,4 +46547,8 @@ img[src*="kazakhstan 1.svg"] {
 
 .rating-text {
   line-height: 0px;
+}
+
+.item-link:hover {
+  color: #996599;
 }
