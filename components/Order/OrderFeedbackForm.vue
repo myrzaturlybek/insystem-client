@@ -24,24 +24,36 @@
       <div class="sidebar-top-line mt16"></div>
       <template v-if="!isTask">
         <div class="mt16">
-          <item-with-avatar img-url="/order-photo.png">
+          <item-with-avatar img-url="/logo.png">
             <template #leftColumn>
-              <div>
-                <a href="#" class="item-link"><p>Заказ № 00000001</p></a>
-              </div>
-              <div>
-                <img src="/rating-inactive.svg" alt="rating-inactive" />
+              <a href="#" class="item-link">
+                <p class="bold-text">Mobilka Electronic</p>
+              </a>
+
+              <div class="d-flex align-items-center">
+                <div class="mr16">
+                  <img src="/kazakhstan 1.svg" alt="" />
+                </div>
+                <img class="icon16 mr8" src="/activated.svg" alt="" />
+                <p class="blue bold-text rating-text">4.9</p>
+                <p class="little-grey-text rating-text">/ 5</p>
               </div>
             </template>
             <template #rightColumn>
-              <div></div>
-              <p class="little-grey-text">Не выбрано</p>
+              <div class="d-flex">
+                <p class="sidebar-user-status">поставщик</p>
+                <img src="/verified.svg" alt="" class="ml16 icon16" />
+                <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
+              </div>
+              <p class="little-grey-text">Электроника</p>
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
           <div class="mt16 d-flex">
             <i class="icon-plus little-grey-text"></i>
-            <p class="little-grey-text ml16 cursor-pointer">Добавить коментарий</p>
+            <p class="little-grey-text ml16 cursor-pointer">
+              Добавить коментарий
+            </p>
           </div>
         </div>
         <div class="mt16">
@@ -66,7 +78,9 @@
           <div class="sidebar-top-line mt16"></div>
           <div class="mt16 d-flex">
             <i class="icon-plus little-grey-text"></i>
-            <p class="little-grey-text ml16 cursor-pointer">Добавить коментарий</p>
+            <p class="little-grey-text ml16 cursor-pointer">
+              Добавить коментарий
+            </p>
           </div>
         </div>
         <div class="mt16">
@@ -89,31 +103,45 @@
           <div class="sidebar-top-line mt16"></div>
           <div class="mt16 d-flex">
             <i class="icon-plus little-grey-text"></i>
-            <p class="little-grey-text ml16 cursor-pointer">Добавить коментарий</p>
+            <p class="little-grey-text ml16 cursor-pointer">
+              Добавить коментарий
+            </p>
           </div>
         </div>
       </template>
 
       <template v-if="isTask">
         <div class="mt16">
-          <item-with-avatar img-url="/order-photo.png">
+          <item-with-avatar img-url="/logo.png">
             <template #leftColumn>
-              <div>
-                <a href="#" class="item-link"> <p>Задание № 00000001</p></a>
-              </div>
-              <div>
-                <img src="/rating-inactive.svg" alt="rating-inactive" />
+              <a href="#" class="item-link">
+                <p class="bold-text">Mobilka Electronic</p>
+              </a>
+
+              <div class="d-flex align-items-center">
+                <div class="mr16">
+                  <img src="/kazakhstan 1.svg" alt="" />
+                </div>
+                <img class="icon16 mr8" src="/activated.svg" alt="" />
+                <p class="blue bold-text rating-text">4.9</p>
+                <p class="little-grey-text rating-text">/ 5</p>
               </div>
             </template>
             <template #rightColumn>
-              <div></div>
-              <p class="little-grey-text">Не выбрано</p>
+              <div class="d-flex">
+                <p class="sidebar-user-status">поставщик</p>
+                <img src="/verified.svg" alt="" class="ml16 icon16" />
+                <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
+              </div>
+              <p class="little-grey-text">Электроника</p>
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
           <div class="mt16 d-flex">
             <i class="icon-plus little-grey-text"></i>
-            <p class="little-grey-text ml16 cursor-pointer">Добавить коментарий</p>
+            <p class="little-grey-text ml16 cursor-pointer">
+              Добавить коментарий
+            </p>
           </div>
         </div>
       </template>

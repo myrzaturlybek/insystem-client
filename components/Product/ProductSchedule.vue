@@ -45,7 +45,10 @@
           'mt32',
         ]"
       >
-        <div class="bold-text mb16">{{ item.title }}</div>
+        <div class="mb16 d-flex justify-content-between">
+          <p class="bold-text">{{ item.title }}</p>
+          <apple-switch v-if="item.haveAppleSwitch"></apple-switch>
+        </div>
         <div class="mb16">{{ item.text }}</div>
         <div class="sidebar-top-line"></div>
       </div>

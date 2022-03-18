@@ -20,6 +20,39 @@
         />
         <div class="cabinet-input-file icon-plus" @click="addPhoto"></div>
       </div>
+      <div class="add-photo-container">
+        <input
+          id="addPhotoInput"
+          type="file"
+          class="add-photo-input"
+          @input="$emit('addPhoto', $event)"
+        />
+        <div class="cabinet-input-file icon-plus" @click="addPhoto"></div>
+      </div>
+      <div class="add-photo-container">
+        <input
+          id="addPhotoInput"
+          type="file"
+          class="add-photo-input"
+          @input="$emit('addPhoto', $event)"
+        />
+        <div class="cabinet-input-file icon-plus" @click="addPhoto"></div>
+      </div>
+      <div class="add-photo-container">
+        <input
+          id="addPhotoInput"
+          type="file"
+          class="add-photo-input"
+          @input="$emit('addPhoto', $event)"
+        />
+        <div class="cabinet-input-file icon-plus" @click="addPhoto"></div>
+      </div>
+    </div>
+    <div class="mt32">
+      <div class="d-flex cursor-pointer">
+        <i class="icon-plus little-grey-text"></i>
+        <p class="little-grey-text ml16">Добавить</p>
+      </div>
     </div>
   </div>
 </template>

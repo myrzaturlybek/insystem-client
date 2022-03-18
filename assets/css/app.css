@@ -42776,7 +42776,7 @@ a h1:hover {
 
 .general-content-header-greyswitch-checked p,
 .general-content-header-greyswitch-first p {
-  border: none !important;
+  border-right-color: #fff !important;
   cursor: pointer;
 }
 
@@ -43370,6 +43370,9 @@ a h1:hover {
   position: sticky;
   top: 64px;
 }
+.sidebar-top.user2, .sidebar-top.user3 {
+  cursor: pointer;
+}
 
 .sidebar-top {
   padding: 8px 16px;
@@ -43703,7 +43706,7 @@ input.apple-switch {
   height: 20px;
   background-color: #bbbbbc;
   border-radius: 10px;
-
+  cursor: pointer;
 }
 
 input.apple-switch:after {
@@ -46397,6 +46400,10 @@ input.apple-switch:checked:after {
 
 .border-bottom-gray {
   border-bottom: 1px solid #ebebeb;
+}
+
+.border-right-gray {
+  border-right-color: #ebebeb !important;
 }
 
 .feedback-button {

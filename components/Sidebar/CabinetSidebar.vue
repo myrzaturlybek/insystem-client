@@ -13,7 +13,7 @@
           </div>
         </div>
         <div v-show="!users" class="sibebar-user-arrow">
-          <img class="icon24" src="/chevron-downvs.svg" @click="showUsers()" />
+          <img class="icon24 cursor-pointer" src="/chevron-downvs.svg" @click="showUsers()" />
         </div>
         <div v-show="users" class="sibebar-user-check">
           <img class="icon22" src="/circle-check-black.svg" alt="" />

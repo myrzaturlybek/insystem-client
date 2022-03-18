@@ -15,7 +15,7 @@
       ]"
       @click="$emit('switch', item.value)"
     >
-      <p :class="[{ 'border-none': nextItemChecked(index) }]">
+      <p :class="[{ 'border-right-gray': nextItemChecked(index) }]">
         {{ item.text }}
       </p>
     </div>

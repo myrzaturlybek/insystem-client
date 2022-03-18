@@ -7,8 +7,14 @@
       :switch-items="switchItems"
       :switch-value="switchValue"
       :actions="actions"
+      show-toggle-all
       @switch="switchCategory"
       @action="action"
+      @toggleAll="
+        (event) => {
+          toggleAll(event, employees[switchValue])
+        }
+      "
     >
       <template v-if="showCheckbox" #footer>
         <pick-all
@@ -82,7 +88,7 @@
       </the-card>
     </template>
     <template v-if="switchValue == 'positions'">
-      <the-card v-for="position in positions" :key="position.id">
+      <the-card v-for="position in employees.positions" :key="position.id">
         <template #header>
           <product-item-header
             :title="position.name"
@@ -133,9 +139,11 @@
 
 <script>
 import moment from 'moment'
+import cabinetMainPages from '../../../mixins/cabinet-main-pages'
 
 export default {
   name: 'EmployeesIndex',
+  mixins: [cabinetMainPages],
   layout: 'cabinet',
   data() {
     return {
@@ -174,53 +182,53 @@ export default {
             checked: true,
           }
         }),
+        positions: [
+          {
+            name: 'Директор',
+            checked: true,
+
+            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sit pretium proin quis malesuada netus sapien consequat nunc.
+            Non elementum turpis elementum tincidunt vitae quam eget.
+            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
+            libero ut aliquam.`,
+            employees: [
+              {
+                img: '/logo.png',
+                name: 'Иванов Иван Иванович',
+                dateTime: moment(new Date()).format('DD.MM.YYYY / hh:mm'),
+              },
+            ],
+          },
+          {
+            name: 'Менеджер',
+            checked: true,
+
+            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sit pretium proin quis malesuada netus sapien consequat nunc.
+            Non elementum turpis elementum tincidunt vitae quam eget.
+            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
+            libero ut aliquam.`,
+            employees: [
+              {
+                img: '/logo.png',
+                name: 'Иванов Иван Иванович',
+                dateTime: moment(new Date()).format('DD.MM.YYYY / hh:mm'),
+              },
+            ],
+          },
+          {
+            name: 'Бухгалтер',
+            checked: false,
+
+            description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sit pretium proin quis malesuada netus sapien consequat nunc.
+            Non elementum turpis elementum tincidunt vitae quam eget.
+            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
+            libero ut aliquam.`,
+          },
+        ],
       },
-      positions: [
-        {
-          name: 'Директор',
-          checked: true,
-
-          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sit pretium proin quis malesuada netus sapien consequat nunc.
-            Non elementum turpis elementum tincidunt vitae quam eget.
-            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
-            libero ut aliquam.`,
-          employees: [
-            {
-              img: '/logo.png',
-              name: 'Иванов Иван Иванович',
-              dateTime: moment(new Date()).format('DD.MM.YYYY / hh:mm'),
-            },
-          ],
-        },
-        {
-          name: 'Менеджер',
-          checked: true,
-
-          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sit pretium proin quis malesuada netus sapien consequat nunc.
-            Non elementum turpis elementum tincidunt vitae quam eget.
-            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
-            libero ut aliquam.`,
-          employees: [
-            {
-              img: '/logo.png',
-              name: 'Иванов Иван Иванович',
-              dateTime: moment(new Date()).format('DD.MM.YYYY / hh:mm'),
-            },
-          ],
-        },
-        {
-          name: 'Бухгалтер',
-          checked: false,
-
-          description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sit pretium proin quis malesuada netus sapien consequat nunc.
-            Non elementum turpis elementum tincidunt vitae quam eget.
-            Cursus volutpat habitasse elementum justo. Sit pharetra consectetur id id
-            libero ut aliquam.`,
-        },
-      ],
     }
   },
   methods: {

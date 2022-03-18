@@ -7,6 +7,7 @@
       :show-middle="true"
       :switch-items="switchItems"
       :switch-value="switchValue"
+      show-toggle-all
       @switch="switchCategory"
       @action="action"
     ></the-filter>
@@ -49,6 +50,7 @@ export default {
               title: 'Название',
               text: 'Revenj',
               fullSize: true,
+              haveAppleSwitch: true,
             },
             {
               title: 'Страна',
@@ -73,10 +75,8 @@ export default {
             {
               title: 'Название',
               text: 'Revenj',
-            },
-            {
-              title: 'Категория',
-              text: 'Смартфоны и гаджеты',
+              fullSize: true,
+              haveAppleSwitch: true,
             },
             {
               title: 'Страна',
