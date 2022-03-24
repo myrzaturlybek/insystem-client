@@ -89,7 +89,7 @@
           архивы
         </p>
       </div>
-      <div class="col-md-12 mb32 d-flex cursor-pointer">
+      <div class="col-md-12 mb32 d-flex cursor-pointer hover-black">
         <i class="icon-plus little-grey-text mr16"></i>
         <p class="little-grey-text">Добавить ссылку</p>
       </div>

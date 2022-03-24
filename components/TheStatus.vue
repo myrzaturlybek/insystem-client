@@ -5,14 +5,14 @@
     </p>
     <div :style="{ borderColor: colorByValue }" class="showcase-circle"></div>
     <div v-if="editable" class="general-content-header-arrowdown">
-      <img
+      <i
         v-show="!showDropdown"
-        src="/chevron-downvs.svg"
+        class="icon-chevron-down little-grey-text ml16"
         @click="toggleDropdown"
       />
-      <img
+      <i
         v-show="showDropdown"
-        src="/chevron-upvs.svg"
+        class="icon-chevron-up little-grey-text ml16"
         @click="toggleDropdown"
       />
       <div v-show="showDropdown" class="white-container dropdown">

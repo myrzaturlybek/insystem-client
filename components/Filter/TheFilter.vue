@@ -57,7 +57,7 @@
         >
           <div>{{ filter }}</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 cursor-pointer little-grey-text" />
           </div>
         </div>
       </div>

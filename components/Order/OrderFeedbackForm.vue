@@ -49,7 +49,7 @@
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
-          <div class="mt16 d-flex">
+          <div class="mt16 d-flex cursor-pointer hover-black">
             <i class="icon-plus little-grey-text"></i>
             <p class="little-grey-text ml16 cursor-pointer">
               Добавить коментарий
@@ -76,7 +76,7 @@
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
-          <div class="mt16 d-flex">
+          <div class="mt16 d-flex cursor-pointer hover-black">
             <i class="icon-plus little-grey-text"></i>
             <p class="little-grey-text ml16 cursor-pointer">
               Добавить коментарий
@@ -101,7 +101,7 @@
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
-          <div class="mt16 d-flex">
+          <div class="mt16 d-flex cursor-pointer hover-black">
             <i class="icon-plus little-grey-text"></i>
             <p class="little-grey-text ml16 cursor-pointer">
               Добавить коментарий
@@ -137,7 +137,7 @@
             </template>
           </item-with-avatar>
           <div class="sidebar-top-line mt16"></div>
-          <div class="mt16 d-flex">
+          <div class="mt16 d-flex cursor-pointer hover-black">
             <i class="icon-plus little-grey-text"></i>
             <p class="little-grey-text ml16 cursor-pointer">
               Добавить коментарий

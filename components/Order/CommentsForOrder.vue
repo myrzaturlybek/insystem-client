@@ -8,7 +8,7 @@
 
     <div class="row mt32">
       <div
-        class="col-md-12 little-grey-text d-flex cursor-pointer"
+        class="col-md-12 little-grey-text d-flex cursor-pointer hover-black"
         @click="$emit('addComment')"
       >
         <i class="icon-plus"></i>

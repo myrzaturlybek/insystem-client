@@ -42707,6 +42707,15 @@ a h1:hover {
   align-items: center;
 }
 
+.general-content-header-title i.back-to {
+  font-size: 24px;
+  color: #bbbbbc;
+}
+
+.general-content-header-title i.back-to:hover {
+  color: #000;
+}
+
 .general-content-header-top {
   display: flex;
   justify-content: space-between;
@@ -42791,6 +42800,11 @@ a h1:hover {
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
+}
+
+.general-content-header-arrowdown:hover i {
+  color: #000;
 }
 
 .general-content-header-arrowdown .dropdown {
@@ -46489,6 +46503,11 @@ input.apple-switch:checked:after {
   align-items: center;
 }
 
+.cabinet-input-file:hover {
+  border-color: #000;
+  color: #000;
+}
+
 .add-banner-input {
   width: 100%;
   height: 200px;
@@ -46540,6 +46559,11 @@ input.apple-switch:checked:after {
   font-size: 24px;
 }
 
+.add-avatar-button:hover {
+  border-color: #000;
+  color: #000;
+}
+
 .replenish-input {
   height: 100%;
   border-radius: 10px;
@@ -46558,4 +46582,8 @@ img[src*="kazakhstan 1.svg"] {
 
 .item-link:hover {
   color: #996599;
+}
+
+.hover-black:hover i, .hover-black:hover p {
+  color: #000 !important;
 }

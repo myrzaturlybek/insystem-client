@@ -157,6 +157,11 @@ select {
   background-image: url('/chevron-down.svg');
   background-repeat: no-repeat;
   background-position: right 0 top 60%, 0 0;
+  cursor: pointer;
+}
+
+select:hover {
+  background-image: url('/chevron-downblack.svg');
 }
 
 .select-metrics {
@@ -187,6 +192,7 @@ input[type='datetime-local']::-webkit-calendar-picker-indicator {
   right: 0;
   top: 55%;
   border: none;
+  cursor: pointer;
 }
 
 .radio-button-container {

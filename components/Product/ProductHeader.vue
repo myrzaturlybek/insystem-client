@@ -2,10 +2,9 @@
   <div class="white-container">
     <div class="general-content-header-top">
       <h2 class="general-content-header-title">
-        <img
+        <i
           v-if="backTo"
-          class="mr16 icon24 back-to"
-          src="/chevron-leftvs.svg"
+          class="mr16 icon24 back-to icon-chevron-left"
           @click="$router.go(-1)"
         />
         {{ title }}

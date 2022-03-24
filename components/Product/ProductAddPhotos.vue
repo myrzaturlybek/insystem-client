@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="mt32">
-      <div class="d-flex cursor-pointer">
+      <div class="d-flex cursor-pointer hover-black">
         <i class="icon-plus little-grey-text"></i>
         <p class="little-grey-text ml16">Добавить</p>
       </div>

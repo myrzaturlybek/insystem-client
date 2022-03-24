@@ -28,7 +28,7 @@
           condimentum vitae, eu phasellus tristique at. Amet, viver.
         </custom-input>
       </div>
-      <div class="mt16 d-flex">
+      <div class="mt16 d-flex cursor-pointer hover-black">
         <i class="icon-plus little-grey-text"></i>
         <p class="little-grey-text ml16">Прикрепить фото</p>
       </div>
