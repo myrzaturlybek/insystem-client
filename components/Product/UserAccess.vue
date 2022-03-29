@@ -16,7 +16,6 @@
           <div class="d-flex justify-content-between py16">
             <p>{{ access.text }}</p>
             <apple-switch
-              v-if="showSwitch"
               :checked="access.turnedOn"
               @switch="$emit('toggle', $event)"
             ></apple-switch>

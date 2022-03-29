@@ -45,7 +45,7 @@
                 <a href="#" class="item-link">
                   <p class="bold-text">Mobilka Electronic</p>
                 </a>
-                <div class="mt8 df">
+                <div class="mt16 df">
                   <div class="mr16">
                     <img src="/kazakhstan 1.svg" alt="" />
                   </div>
@@ -89,7 +89,7 @@
                 <a href="#" class="item-link">
                   <p class="bold-text">Mobilka Electronic</p>
                 </a>
-                <div class="mt8 df">
+                <div class="mt16 df">
                   <div class="mr16">
                     <img src="/kazakhstan 1.svg" alt="" />
                   </div>

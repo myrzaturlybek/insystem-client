@@ -6,8 +6,8 @@
       </div>
       <div v-if="topFilter" class="sidebar-top-left">
         <div>За всё время</div>
-        <div class="general-content-header-arrowdown m0-auto">
-          <img class="icon16" src="/chevron-downvs.svg" alt="" />
+        <div class="general-content-header-arrowdown hover-black m0-auto">
+          <i class="icon16 little-grey-text icon-chevron-down ml16 little-grey-text ml16" />
         </div>
       </div>
     </div>
@@ -30,36 +30,36 @@
         <div class="general-content-header-accordion-item">
           <div>Категория</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 little-grey-text" />
           </div>
         </div>
         <div class="general-content-header-accordion-item">
           <div>Бренд</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 little-grey-text" />
           </div>
         </div>
         <div class="general-content-header-accordion-item">
           <div>Цена</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 little-grey-text" />
           </div>
         </div>
         <div class="general-content-header-accordion-item">
           <div>Дата</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 little-grey-text" />
           </div>
         </div>
         <div class="general-content-header-accordion-item">
           <div>Статус</div>
           <div class="general-content-header-arrowdown">
-            <img src="/chevron-downvs.svg" alt="" />
+            <i class="icon-chevron-down ml16 little-grey-text" />
           </div>
         </div>
       </div>
-      <div class="general-content-header-search">
-        <img class="icon24" src="/searchvs.svg" alt="" />
+      <div class="general-content-header-search hover-black">
+        <i class="icon-search" />
       </div>
     </div>
   </div>

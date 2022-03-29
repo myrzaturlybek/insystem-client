@@ -27,7 +27,7 @@
 
     <div class="sidebar-top-line mt16"></div>
     <div class="mt16">
-      <p>Заказ № 00000001</p>
+      <a class="item-link" href="#">Заказ № 00000001</a>
       <div class="mt32 d-flex justify-content-between">
         <div>
           <p class="bold-text">Оценка</p>

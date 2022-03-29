@@ -56,10 +56,10 @@
       class="m16-0 general-body-item-middle border-none p0"
     >
       <p class="bold-text">{{ bottomText }}</p>
-      <div v-if="bottomRightText" class="d-flex">
+      <div v-if="bottomRightText" class="d-flex hover-black">
         <p>Процент</p>
         <p class="ml16">%</p>
-        <i class="icon-chevron-down ml16"></i>
+        <i class="icon-chevron-down ml16 little-grey-text cursor-pointer"></i>
       </div>
     </div>
     <div v-if="ballance" class="m16-0 general-body-item-middle border-none p0">

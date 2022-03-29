@@ -28,8 +28,10 @@
         <img src="/verified.svg" alt="" class="ml16 icon16" />
         <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
       </div>
-      <div class="purple-button subscribe-button centralizer">
-        <div class="white">Подписаться</div>
+      <div class="d-flex justify-content-end">
+        <div class="purple-button subscribe-button centralizer">
+          <div class="white">Подписаться</div>
+        </div>
       </div>
     </div>
   </div>

@@ -61,8 +61,8 @@
           </div>
         </div>
       </div>
-      <div class="general-content-header-search">
-        <img class="icon24" src="/searchvs.svg" alt="" />
+      <div class="general-content-header-search hover-black">
+        <i class="icon-search" />
       </div>
     </div>
     <div v-if="showToggleAll">

@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar mr16 white-container2">
     <div class="sidebar-users">
-      <div class="sidebar-top user1">
+      <div v-if="!users" :class="['sidebar-top', 'user1']">
         <div class="sidebar-top-left">
           <div class="sidebar-user-img-cont">
             <div class="sidebar-user-img-greenpoint"></div>
@@ -13,13 +13,34 @@
           </div>
         </div>
         <div v-show="!users" class="sibebar-user-arrow">
-          <img class="icon24 cursor-pointer" src="/chevron-downvs.svg" @click="showUsers()" />
+          <i
+            class="icon24 icon-chevron-down cursor-pointer"
+            @click="showUsers()"
+          />
         </div>
         <div v-show="users" class="sibebar-user-check">
           <img class="icon22" src="/circle-check-black.svg" alt="" />
         </div>
       </div>
       <template v-if="users">
+        <div
+          :class="['sidebar-top', 'user1', 'cursor-pointer']"
+          @click="users = false"
+        >
+          <div class="sidebar-top-left">
+            <div class="sidebar-user-img-cont">
+              <div class="sidebar-user-img-greenpoint"></div>
+              <img class="img48" src="/logo.png" alt="" />
+            </div>
+            <div class="sidebar-user-info">
+              <p class="sidebar-user-name">Revenj</p>
+              <p class="sidebar-user-status mt8">заказчик</p>
+            </div>
+          </div>
+          <div v-show="users" class="sibebar-user-check">
+            <img class="icon22" src="/circle-check-black.svg" alt="" />
+          </div>
+        </div>
         <div class="sidebar-top user2" @click="users = false">
           <div class="sidebar-top-left">
             <div class="sidebar-user-img-cont">

@@ -22,7 +22,7 @@
       </item-with-avatar>
       <div class="sidebar-top-line mt16"></div>
       <template v-if="!isTask">
-        <div class="mt16">
+        <div class="mt32">
           <item-with-avatar img-url="/logo.png">
             <template #leftColumn>
               <a href="#" class="item-link">
