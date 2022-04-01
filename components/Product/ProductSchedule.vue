@@ -68,11 +68,11 @@
     <div v-if="notes" class="mt16 little-grey-text">
       {{ notes }}
     </div>
-    <div v-if="stats" class="mt16 d-flex stats">
+    <div v-if="stats" class="mt16 row">
       <div
         v-for="stat in stats"
         :key="stat.id"
-        class="d-flex align-items-center"
+        class="d-flex align-items-center col-md-6"
       >
         <img :src="stat.icon" />
         <p class="bold-text ml16">{{ stat.text }} &nbsp;</p>

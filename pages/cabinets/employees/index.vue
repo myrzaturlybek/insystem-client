@@ -57,7 +57,7 @@
               </div>
               <div class="ml16 good-name">
                 <p class="bold-text">{{ employee.name }}</p>
-                <div class="mt8 df">
+                <div class="mt16 df">
                   <div class="rating-percent">{{ employee.position }}</div>
                 </div>
               </div>
@@ -115,7 +115,7 @@
                   </div>
                   <div class="ml16 good-name">
                     <p class="bold-text">{{ employee.name }}</p>
-                    <div class="mt8 df">
+                    <div class="mt16 df">
                       <div class="little-grey-text">
                         {{ employee.dateTime }}
                       </div>

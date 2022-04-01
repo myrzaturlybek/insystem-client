@@ -46516,8 +46516,7 @@ input.apple-switch:checked:after {
   align-items: center;
 }
 
-.cabinet-input-file:hover i {
-  border-color: #000;
+.cabinet-input-file:hover {
   color: #000;
 }
 

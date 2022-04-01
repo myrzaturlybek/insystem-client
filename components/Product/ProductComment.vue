@@ -14,7 +14,7 @@
           </div>
           <div class="ml16 good-name">
             <p class="bold-text">Иван Иванов</p>
-            <div class="mt8 df">Менеджер</div>
+            <div class="mt16 df">Менеджер</div>
           </div>
         </div>
         <div>

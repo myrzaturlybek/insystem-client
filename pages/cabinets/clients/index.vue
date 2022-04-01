@@ -44,7 +44,7 @@
             </div>
             <div class="ml16 good-name">
               <p class="bold-text">{{ client.name }}</p>
-              <div class="mt8 df">
+              <div class="mt16 df">
                 <div class="mr16">
                   <img src="/kazakhstan 1.svg" alt="" />
                 </div>
@@ -59,12 +59,12 @@
             </div>
           </div>
           <div>
-            <div class="mb8 d-flex justify-content-end">
+            <div class="mb16 d-flex justify-content-end">
               <p class="sidebar-user-status">поставщик</p>
               <img src="/verified.svg" alt="" class="ml16 icon16" />
               <img src="/more-vertical.svg" alt="" class="ml16 icon16" />
             </div>
-            <div class="rating-percent">Электроника</div>
+            <div class="rating-percent little-grey-text">Электроника</div>
           </div>
         </div>
       </template>

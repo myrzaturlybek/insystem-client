@@ -62,7 +62,7 @@ export default {
   position: absolute;
   top: 50%;
   right: auto;
-  padding: 14px;
+  padding: 8px;
   box-shadow: 0 2px 4px #000;
   z-index: 99;
   left: 16px;
@@ -72,10 +72,15 @@ export default {
   position: absolute;
   top: 50%;
   left: auto;
-  padding: 14px;
+  padding: 8px;
   box-shadow: 0 2px 4px #000;
   z-index: 99;
   right: 16px;
+}
+
+.swiper-next img,
+.swiper-prev img {
+  width: 16px;
 }
 
 .swiper-next img {

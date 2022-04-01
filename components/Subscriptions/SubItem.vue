@@ -7,7 +7,7 @@
       </div>
       <div class="ml16 good-name">
         <p class="bold-text">Revenj</p>
-        <div class="mt8 df">
+        <div class="mt16 df">
           <div class="mr16">
             <img src="/kazakhstan 1.svg" alt="" />
           </div>
@@ -19,7 +19,7 @@
             / 5
           </div>
         </div>
-        <p class="mt8">Электроника</p>
+        <p class="mt16">Электроника</p>
       </div>
     </div>
     <div class="subscriber-left">

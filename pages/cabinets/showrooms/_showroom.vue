@@ -9,41 +9,79 @@
       :statuses="statuses"
       :status="status"
       :actions="actions"
+      :tabs-items="tabsItems"
+      :tab-value="tabValue"
+      @tabSwitch="tabSwitch"
       @changeStatus="changeStatus"
       @toggle="toggle"
     ></product-header>
-    <product-selected-categories
-      :categories="categories"
-    ></product-selected-categories>
-    <product-info
-      title="Информация о шоуруме"
-      :name="showroomName"
-      :description="showroomDescription"
-      :other-info="otherInfo"
-    ></product-info>
-    <product-photos
-      title="Фотографии шоурума"
-      :photos="photos"
-    ></product-photos>
-    <showcases-list></showcases-list>
-    <product-location
-      title="Адрес шоурума"
-      country-name="Казахстан"
-      city-name="Алматы"
-    ></product-location>
-    <product-schedule></product-schedule>
+
+    <template v-if="tabValue == 'info'">
+      <product-selected-categories
+        :categories="categories"
+      ></product-selected-categories>
+      <product-info
+        title="Информация о шоуруме"
+        :name="showroomName"
+        :description="showroomDescription"
+        :other-info="otherInfo"
+      ></product-info>
+      <product-photos
+        title="Фотографии шоурума"
+        :photos="photos"
+      ></product-photos>
+      <showcases-list></showcases-list>
+      <product-location
+        title="Адрес шоурума"
+        country-name="Казахстан"
+        city-name="Алматы"
+      ></product-location>
+      <product-schedule></product-schedule>
+    </template>
+
+    <template v-if="tabValue == 'orders'">
+      <product-list-filter
+        title="Список заказов"
+        top-filter
+        stats
+      ></product-list-filter>
+      <product-list></product-list>
+    </template>
+
+    <template v-if="tabValue == 'reviews'">
+      <reviews-stats title="Рейтинг шоурума"></reviews-stats>
+      <the-filter
+        title="Отзывы о шоуруме"
+        title-size="small"
+        :filters="reviewsFilters"
+        :show-middle="false"
+        class="mt16"
+      ></the-filter>
+      <review-item></review-item>
+      <review-item show-comments></review-item>
+    </template>
   </div>
 </template>
 
 <script>
+import cabinetDetailPages from '~/mixins/cabinet-detail-pages'
+
 export default {
+  mixins: [cabinetDetailPages],
   layout: 'cabinet',
   data() {
     return {
+      tabsItems: [
+        { text: 'Информация', value: 'info' },
+        { text: 'Заказы', value: 'orders' },
+        { text: 'Отзывы', value: 'reviews' },
+      ],
+      tabValue: 'info',
       statuses: [
         { text: 'Есть места', color: '#33B601', value: 'havePlaces' },
         { text: 'Нет мест', color: '#D80808', value: 'noPlaces' },
       ],
+      reviewsFilters: ['Категория', 'Бренд', 'Цена', 'Дата', 'Статус'],
       status: 'havePlaces',
       actions: [{ text: 'Изменить' }, { text: 'Экспорт' }, { text: 'Удалить' }],
       photos: [{ url: '/-_Featured_Image 2.svg' }],
